@@ -1,149 +1,342 @@
 <!DOCTYPE html>
 
-	<html>
+<html>
 
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/animate.css">
-	<link rel="stylesheet" type="text/css" href="css/fonts.css">
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/scroll.js"></script>
-	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery.maskedinput.js"></script>
-	<script type="text/javascript" src="js/velocity.js"></script>
-	<script type="text/javascript" src="js/hammer.min.js"></script>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=o">
-	<title>Home | BBQH</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/animate.css">
+<link rel="stylesheet" type="text/css" href="css/fonts.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/scroll.js"></script>
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.maskedinput.js"></script>
+<script type="text/javascript" src="js/velocity.js"></script>
 
-	<body>
-		<div id="mainLion">
-			<div id="main_menu">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="order.html">Order</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
-					<li><a href="#">Cart</a></li>
-					<li><a href="gallery.html">Gallery</a></li>
-				</ul>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<title>Original Bar-B-Que Hut - The Best Bar-B-Que Around</title>
+</head>
+
+<body>
+<div id="navigationbar" class="navindex navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header"><a class="navbar-brand" href="index.html">Original Bar-B-Que Hut</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder">
+            	<span class="sr-only">Toggle navigation</span>
+            	<span class="icon-bar"></span>
+            	<span class="icon-bar"></span>
+            	<span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-menubuilder">
+            <ul class="nav navbar-nav navbar-center col-lg-10 col-xl-10">
+                <li class="col-lg-2 col-lg-offset-1 col-xl-2 col-xl-offset-0"><a href="#index">Home</a>
+                </li>
+                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a href="menu.html">See Our Menu</a>
+				</li>
+                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a href="order.php">Place An Order</a>
+                </li>
+                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a id="navabout" href="#aboutus">About Us</a>
+                </li>
+                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a id="navcontact" href="#contactus">Contact Us</a>
+                </li>
+                <li class="col-lg-1"><a id="cartli" href="cart.php"><img id="cartbutton" src="Icons Pack/SVG/shopping111.svg" alt="Cart"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="index" class="row">
+	<div id="top_index" class="row">
+		<div id="halalimg" class="col-lg-2 col-lg-offset-0 col-xl-1 hidden-md hidden-sm hidden-xs"><div class="col-lg-11"><img src="images/halalwhite.png" alt=""></div></div>
+		<br>
+		<br>
+		<div class="col-lg-4 col-xs-8 col-sm-8 col-md-6 col-xl-4 col-lg-offset-2 col-xs-offset-2 col-sm-offset-2 col-xl-offset-3 col-md-offset-3"><img id="midlogo" src="images/logome.png" alt=""></div>
+		<div id="media" class="col-lg-2 col-xl-2 col-lg-offset-2 col-xl-offset-2 hidden-md hidden-sm hidden-xs">
+			<div class="col-lg-3 col-lg-offset-2 col-xl-3 col-xl-offset-2 col-md-3 col-md-offset-2 col-sm-3 col-sm-offset-2 col-xs-3 col-xs-offset-2">
+				<a href="https://www.facebook.com/pages/Original-Bar-B-Que-Hut/201312543262192?fref=ts" target="_blank"><img src="Icons Pack/SVG/facebook coloured square rounded.svg" alt=""></a>
 			</div>
-			<div id="navbar">
-				<ul>
-					<li id="menu_icon"><a href="#"><img src="images/menu_icon.svg" alt="="></a></li>
-					<li id="logo_icon" ><a href="index.html"><img class="center" src="images/BBQH_Typeface.png" alt="BBQH" width="150px"></a></li>
-					<li id="cart_icon"><a href="cart.html"><img class="centerright" width="36px" src="images/cart.svg" alt=""></a></li>
-				</ul>
+			<div class="col-lg-3 col-xm-3 col-xs-3 col-md-3 col-xl-3">
+				<a href="https://www.twitter.com/OriginalBBQHut" target="_blank"><img src="Icons Pack/SVG/twitter coloured square rounded.svg" alt=""></a>
 			</div>
-			<!-- <div id="social_media_bar">
-				<ul>
-					<li><a href="http://www.facebook.com"><img src="images/facebook_round.svg" alt=""></a></li>
-					<li><a href="http://www.twitter.com"><img src="images/twitter_round.svg" alt=""></a></li>
-					<li><a href="http://www.instagram.com"><img src="images/instagram_round.svg" alt=""></a></li>
-				</ul> -->
+			<div class="col-lg-3 col-xm-3 col-xs-3 col-md-3 col-xl-3">
+				<a href="http://www.instagram.com" target="_blank"><img src="Icons Pack/SVG/SET instagram.svg" alt=""></a>
 			</div>
-			<div id="homepage">
-				<img src="images/bbq3.jpg" alt="">
-				<div id="homepage_container">
-					<div id="logobox" class="centerx"><img src="images/darrlogo.svg" alt=""></div>
-					<div id="homepage_subtext">The <i>originals</i> in barbecue.</div>
-					<div id="homepage_buttons" class="centerx">
-						<ul>
-							<li><a href="order.html">Place Order</a></li>
-							<li id="hi"><a href="#aboutus_anchor">About Us</a></li>	
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div id="about">
-				<!-- <div id="header_container" class="centerx">
-					<hr class="header_line_left"><div id="head">About Us</div><hr class="header_line_right">
-				</div> -->
-				<div id="header_container" class="centerx">
-					<img src="images/header4.jpg" alt="">
-					<div id="inner_white_box" class="center"></div>
-					<div id="header_border" class="center"></div>
-					<div id="header_text" class="center , font_style_h1_w">About Us</div>
-				</div>
-				<div id="about_text_container" class="centerx">
-					<div id="about_text_head" class="font_style_h2_w">Fancy Header. </div>
-					<br>
-					<div id="about_text_body" class="font_style_reg_w">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore sed atque, facere porro est voluptatibus in provident molestiae impedit possimus nostrum fuga eaque eligendi numquam mollitia. Tenetur, voluptate velit.
-					</div>
-				</div>
-				<div id="about_pics" class="centerx">
-					<img src="images/BBQH_Collage.png" alt="">
-				</div>
-				<div id="gallery_link" class="centerx , font_style_h2_w">
-					<div class="center"><a href="gallery.html">Our Gallery</a></div>
-				</div>
-			</div>
-			<div id="contact">
-				<!-- <div id="header_container">
-					<hr class="header_line_left"><div id="head">Find Us</div><hr class="header_line_right">
-				</div> -->
-				<div id="header_container" class="centerx">
-					<img src="images/header3.jpg" alt="">
-					<div id="inner_white_box" class="center"></div>
-					<div id="header_border" class="center"></div>
-					<div id="header_text" class="center , font_style_h1_w">Contact Us</div>
-				</div>
-				<div id="contact_box">
-					<div id="contact_content_container" class="centerx">
-						<div class="center , font_style_reg_b">
-							<b>Call:</b><br>
-							+1-868-300-4444 <br>
-							<b>Email: </b>
-							bbqhut@aol.com <br>
-							<b>Social media</b><br>
-							<ul>
-								<li><a href="http://www.facebook.com"><img src="images/facebook_round.png" alt=""></a></li>
-								<li><a href="http://www.twitter.com"><img src="images/twitter_round.png" alt=""></a></li>
-								<li><a href="http://www.instagram.com"><img src="images/instagram_round.png" alt=""></a></li>
-							</ul>
-						</div>	
-					</div>
-				</div>
-				<div id="contact_button" class="centerx">
-					<img src="images/map.png" alt="" class="centerx">
-					<a href="#" class="center">
-						<div class="center , font_style_h2_w">Directions</div>
-					</a>
-				</div>
-			</div>
-			<div id="sitemap"></div>
 		</div>
-	</body>
+	</div>
+	<br><br>
+	<div id="menu" class="row">
+		<div class="col-lg-10 col-lg-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0 col-xl-12 col-xl-offset-0">
+				<br>
+				<div class="col-lg-3 col-lg-offset-0 col-md-6 col-md-offset-0 col-xl-3 col-xl-offset-0 col-xs-6 col-xs-offset-0 col-sm-6 col-sm-offset-0">
+					<a href="menu.html"><div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 hoverglow indexitem">See Our Menu</div></a>
+				</div>
+				<div class="col-lg-3 col-lg-offset-0 col-md-6 col-md-offset-0 col-xl-3 col-xl-offset-0 col-xs-6 col-xs-offset-0 col-sm-6 col-sm-offset-0">
+					<a href="order.php"><div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 hoverglow indexitem">Place An Order</div></a>
+				</div>
+				<div class="visible-xs visible-sm hidden-lg visible-md hidden-xl"><br><br><br><br><br><br></div>
+				<div class="col-lg-3 col-lg-offset-0 col-md-6 col-md-offset-0 col-xl-3 col-xl-offset-0 col-xs-6 col-xs-offset-0 col-sm-6 col-sm-offset-0">
+					<a href="#aboutus"><div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 hoverglow indexitem">About Us</div></a>
+				</div>
+				<div class="col-lg-3 col-lg-offset-0 col-md-6 col-md-offset-0 col-xl-3 col-xl-offset-0 col-xs-6 col-xs-offset-0 col-sm-6 col-sm-offset-0">
+					<a href="#contactus"><div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 hoverglow indexitem">Contact Us</div></a>
+				</div>
+			</div>
+		</div>
+		<br><br><br>
+		<div class="visible-lg hidden-sm hidden-xl hidden-xs hidden-md"><br><br><br><br><br></div>
+	</div>
+</div>
+<!-- <div class="visible-lg hidden-sm hidden-xl hidden-xs hidden-md"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+<div class="visible-xl hidden-sm hidden-xs hidden-lg hidden-md"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+<div class="visible-md hidden-sm hidden-xl hidden-lg hidden-xs"><br><br><br><br><br><br><br><br><br><br><br><br></div>
+<div class="visible-xs hidden-sm hidden-xl hidden-lg hidden-md"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+<div class="visible-sm hidden-xs hidden-xl hidden-lg hidden-md"><br><br><br><br><br><br><br><br><br><br><br><br><br></div> -->
 
-	<footer>
-		<script type="text/javascript" src="Resources/js/index.js"></script>
-		<script>
-		var counter = 0;
-			$("#menu_icon").click(function(){
-				if (counter === 0){
-					// $("#navbar").velocity({left: "185px"});
-					$("#social_media_bar").velocity({left: "18.45em"});
-					$("#main_menu").velocity({left: "0px"});
-					// $("#logo_icon").fadeOut(500);
-					// $("#cart_icon").fadeOut(500);
-					$("#homepage").css('-webkit-filter','blur(5px)');
-					counter++;
-				}else{
-					// $("#navbar").velocity({left: "0"});
-					$("#social_media_bar").velocity({left: "30em"});
-					$("#main_menu").velocity({left: "-190px"});
-					// $("#logo_icon").fadeIn(500);
-					// $("#cart_icon").fadeIn(500);
-					$("#homepage").css('-webkit-filter','blur(0px)');
-					counter--;
-				}
+<div id="about_us" class="row">
+	<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-xl-10 col-xl-offset-1">
+		<div id="aboutus" class="anchor"></div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12 center_text heading">About Us</div>
+	</div>
+</div>
+<br><br><br>
+<div class="row">
+	<div class="col-lg-12 col-lg-offset-0 col-xl-12 col-xl-offset-0 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		<div class="col-lg-12 col-md-12 col-xl-12 col-sm-12 col-xs-12">
+			<br>
+			<div class="row">
+				<div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 heading2 center_text">Our Mission</div>
+				<br><br><br>
+				<div class="col-lg-10 col-lg-offset-1 col-xl-12 col-xl-offset-0 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 center_text">
+					We have a simple goal: to make the best barbeque that we can, in our own way, and get our barbecue to the most people that we can. A combination of intense flavors, stemming from our use of our variety special sauces (including our trademark Barbecue Sauce), is our signature style, and we want to bring this signature style to people all over Trinidad.
+				</div>
+			</div>
+		</div>
+	</div>
+	<br><br><br><br><br><br><br><br><br><br>
+	<div class="col-lg-10 col-lg-offset-1 col-xl-10 col-xl-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		<div class="col-lg-12 col-md-12 col-xl-12 col-sm-12 col-xs-12">
+			<br>
+			<div id="crewmeet" class="row">
+				<a href="family.html">
+					<div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 heading2 center_text">Meet the Family</div>
+					<img class="col-lg-6 col-lg-offset-3 img-responsive" src="images/header3.jpg" alt=":/"></img>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-12 col-lg-offset-0 col-xl-12 col-xl-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0">
+		<div class="col-lg-12 col-md-12 col-xl-12 col-sm-12 col-xs-12">
+			<br><br><br>
+			<div class="row">
+				<div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 heading2 center_text">Our Story</div>
+				<br><br><br>
+				<div class="col-lg-10 col-lg-offset-1 col-xl-12 col-xl-offset-0 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 center_text">
+					1997. San Fernando, Trinidad and Tobago. “Chicken and Chips” was fast becoming the predominant ‘Fast Food’ in Trinidad and Tobago. Mr. David Bukhal recognized that a lot of newly opened Fast Food Eateries did not serve foods that were Halal, ignoring the needs of the Muslim Community of Trinidad. Having worked in various eateries during the 80s, he was familiar with the various procedures involved in operating such a venue. After some consideration, he and his brothers Kamal (A.K.A KB), Sohan Alan (A.K.A The Kernel) and Sasenarine (A.K.A Popee), decided to undertake a pioneering venture, the result of which was the creation of Original BBQ Hut, a Fast Food Restaurant where Halal foods were served, which could be enjoyed by both Muslims and non-Muslims alike.
+					The original location was on South Trunk Road, Bel Air, La Romaine, at a simple venue consisting of two tents and five tables. We soon began to develop and subsequently offer our now-signature line of sauces, the recipes of which are still kept secret to this day. Following this, they experienced phenomenal growth, surpassing all expectations. Due to this and other changes occurring within the Business, the venue was relocated to Cipero Road, Victoria Village, San Fernando.  Our organization of our workers created an excellent flow, enabling orders to be filled in mere minutes, if not less.
+					BBQ Hut currently resides on 3 acres of prime real estate, with a staff of over 50 workers. The Bukhal Brothers are now aided by their children (Abdul-Qadir, Kamron, Cashmirr, Khadijah, Jaleela, Saleena, Aleem, Aleema, Alaana, and Ahmad) in the running of the business, meaning that our business is more, now than ever, a family establishment. Our Barbecue is prized by people throughout Trinidad, and we are renowned for having one singular location.
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+<br>
+<hr>
+<div class="row">
+	<div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 heading2 center_text">Reviews</div>
+		<div class="col-xs-8 col-xs-offset-2 text-center w darkbrown">
+			<blockquote class="blockquote padding_10">
+				<span class="glyphicon glyphicon glyphicon-star padding_1"></span>
+				<span class="glyphicon glyphicon glyphicon-star padding_1"></span>
+				<span class="glyphicon glyphicon glyphicon-star padding_1"></span>
+				<span class="glyphicon glyphicon glyphicon-star padding_1"></span>
+				<span class="glyphicon glyphicon glyphicon-star padding_1"></span>
+				<p><i>"The best barbecue in Trinidad."</i>
+				<footer>
+					Kevon X
+				</footer>
+			</blockquote>
+			<hr>
+			<blockquote class="blockquote">
+				<span class="glyphicon glyphicon glyphicon-star padding_1"></span>
+				<span class="glyphicon glyphicon glyphicon-star padding_1"></span>
+				<span class="glyphicon glyphicon glyphicon-star padding_1"></span>
+				<span class="glyphicon glyphicon glyphicon-star padding_1"></span>
+				<span class="glyphicon glyphicon glyphicon-star padding_1"></span>
+				<p><i>"Delicious."</i>
+				<footer>
+					Kristan Birbalsingh
+				</footer>
+			</blockquote>
+		</div>
+	</div>
+</div>
+<br><br><br>
+<div id="contact_us" class="row">
+	<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-xl-10 col-xl-offset-1">
+		<div id="contactus" class="anchor"></div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12 center_text heading">Contact Us</div>
+	</div>
+</div>
+<br>
+<div class="row" id="contact_content">
+	<div class="col-lg-10 col-lg-offset-1 col-xl-10 col-xl-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 text-center">
+		<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-xl-12">
+			<div class="row">
+				<div class="col-lg-12 con_button">
+					<b>Call</b><br>+1(868)657-9429
+				</div>
+				<br>
+				<div class="visible-xs hidden-sm hidden-xl hidden-lg hidden-md"><br></div>
+				<div class="visible-lg hidden-sm hidden-xl hidden-xs hidden-md"><br><br></div>
+				<div class="col-lg-12 con_button">
+					<b>Email</b><br>info@originalbarbqhut.com
+				</div>
+				<br>
+				<div class="visible-xs hidden-sm hidden-xl hidden-lg hidden-md"><br></div>
+				<div class="visible-lg hidden-sm hidden-xl hidden-xs hidden-md"><br><br></div>
+				<div class="col-lg-12 con_button">
+					<b>Address</b><br>Cipero Road, Victoria Village, San Fernando
+					<br>
+					<b>One Location Only!</b>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-xl-12">
+			<br>
+			<div class="visible-xs hidden-sm hidden-xl hidden-lg hidden-md"><br></div>
+			<div class="visible-md hidden-sm hidden-xl hidden-lg hidden-xs"><br></div>
+			<div class="row">
+				<div id="media" class="col-lg-12 col-xs-12 col-sm-12 col-xl-12 col-md-12">
+					<div class="col-lg-4 col-xs-4 col-sm-4 col-xl-4 col-md-4">
+						<div class="col-lg-10 col-lg-offset-1 col-xl-10 col-xl-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+							<a href="https://www.facebook.com/pages/Original-Bar-B-Que-Hut/201312543262192?fref=ts" target="_blank"><img src="Icons Pack/SVG/facebook coloured square rounded.svg" alt=""></a>
+						</div>
+					</div>
+					<div class="col-lg-4 col-xs-4 col-sm-4 col-xl-4 col-md-4">
+						<div class="col-lg-10 col-lg-offset-1 col-xl-10 col-xl-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+							<a href="https://www.twitter.com/OriginalBBQHut" target="_blank"><img src="Icons Pack/SVG/twitter coloured square rounded.svg" alt=""></a>
+						</div>
+					</div>
+					<div class="col-lg-4 col-xs-4 col-sm-4 col-xl-4 col-md-4">
+						<div class="col-lg-10 col-lg-offset-1 col-xl-10 col-xl-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+							<a href="http://www.instagram.com" target="_blank"><img src="Icons Pack/SVG/SET instagram.svg" alt=""></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<br><br>
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
+		<div class="col-lg-6 col-lg-offset-0 col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-xl-6 col-xl-offset-0">
+			<a class="nolink" href="catering_form.html">
+				<div class="col-lg-6 col-lg-offset-5 col-md-8 col-md-offset-2 contact_button center_text">Catering Services</div>
+			</a>
+		</div>
+		<div class="hidden-lg visible-md hidden-xl visible-sm visible-xs"><br><br><br><br></div>
+		<div class="col-lg-6 col-lg-offset-0 col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-xl-6 col-xl-offset-0">
+			<a href="employment_application_form.pdf" target="_blank">
+				<div class="col-lg-6 col-lg-offset-1 col-md-8 col-md-offset-2 contact_button center_text">Job Application</div>
+			</a>
+		</div>
+	</div>
+</div>
+<br><br><br>
+<div class="row">
+	<div id="recenter_map" class="col-lg-1 col-lg-offset-11 col-xl-1 col-xl-offset-11 col-sm-2 col-sm-offset-10 col-xs-4 col-xs-offset-8 col-md-2 col-md-offset-10">
+		<button onclick="refreshmap();">Re-center<br>Map</button>
+	</div>
+</div>
+<div class="row">
+	<div id="google_map" class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
+		<div id="map_overlay" class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<div class="row">
+				<div id="click_map_instruct" class="col-lg-12">Click the map to use</div>
+			</div>
+		</div>
+		<iframe name="g_map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.9836853293314!2d-61.456360784645334!3d10.262897771266905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c358c459bdd4d15%3A0xda9874f5c5a0ad98!2sOriginal+Bar-B-Que+Hut!5e0!3m2!1sen!2stt!4v1450136829095" width="100%" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div>
+</div>
+<hr>
+<div class="row" id="footer">
+	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2 center_text">
+			<div class="col-lg-4 col-md-4 col-xl-4 col-xs-12 col-sm-12">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+					<div class="footerheading"><b>Navigation</b></div>
+				</div>
+				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
+					<a href="index.html"><div class="footerlinks">Home</div></a>
+				</div>
+				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
+					<a href="menu.html"><div class="footerlinks">Our Menu</div></a>
+				</div>
+				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
+					<a href="order.php"><div class="footerlinks">Place Your Order</div></a>
+				</div>
+				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
+					<a href="index.html#aboutus"><div class="footerlinks">About Us</div></a>
+				</div>
+				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
+					<a href="family.html"><div class="footerlinks">Meet the Family</div></a>
+				</div>
+				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
+					<a href="index.html#contactus"><div class="footerlinks">Contact Us</div></a>
+				</div>
+				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
+					<a href="catering_form.html"><div class="footerlinks">Catering Services</div></a>
+				</div>
+				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
+					<a href="cart.php"><div class="footerlinks">Checkout</div></a>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-4 col-xl-4 col-xs-12 col-sm-12">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+					<div class="visible-xs hidden-sm hidden-xl hidden-lg hidden-md"><br></div>
+					<div class="visible-sm hidden-xs hidden-xl hidden-lg hidden-md"><br></div>
+					<div class="footerheading"><b>Social Media</b></div>
+				</div>
+				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-4">
+					<a href="https://www.facebook.com/pages/Original-Bar-B-Que-Hut/201312543262192?fref=ts" target="_blank"><div class="footerlinks">Facebook</div></a>
+				</div>
+				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-4">
+					<a href="https://www.twitter.com/OriginalBBQHut" target="_blank"><div class="footerlinks">Twitter</div></a>
+				</div>
+				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-4">
+					<a href="https://www.instagram.com/originalbarbquehut/" target="_blank"><div class="footerlinks">Instagram</div></a>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-4 col-xl-4 col-xs-12 col-sm-12">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+					<div class="visible-xs hidden-sm hidden-xl hidden-lg hidden-md"><br></div>
+					<div class="visible-sm hidden-xs hidden-xl hidden-lg hidden-md"><br></div>
+					<div class="footerheading"><b>Powered By</b></div>
+				</div>
+				<a href="https://www.facebook.com/RootTechnologiesTT/">
+					<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
+						<div class="footerlinks">Root Technologies</div>
+					</div>
+					<br><br>
+					<div class="col-lg-8 col-lg-offset-2 col-md-12 col-xl-12 col-xs-12 col-sm-12">
+						<img id="rootimg" src="images/rtech.png" alt="">
+					</div>
+				</a>
+			</div>
+		</div>			
+	</div> 
+	<br><br>
+</div>	
+<script src="js/bootstrap.min.js"></script>
+</body>
 
-			});
-				var element = $('#navbar');
-				var hammertime = Hammer(element).on("swipe", function(){
-					alert('GT');
-				});
-		</script>
-	</footer>
-
-	</html>
+<footer>
+		<script type="text/javascript" src="js/index.js"></script>
+</footer>
+</html>

@@ -1,283 +1,222 @@
-*
-	margin: 0em
-	padding: 0em
-
-//imports
-@import about
-@import contact
-@import sitemap
-@import mainmenu
-@import navbar
-@import socialmediabar
-@import gallery
 @import order
-
-//variables
-$color_1: #E3B15A
-$viewport_width: 375px
-$viewport_height: 627px
-$font_color: #39572B
-$font_color2: #fff
-$navbar_height: 65px
-
-//default classes
-.center
-	position: absolute
-	top: 50%
-	left: 50%
-	transform: translate(-50%, -50%)
-.centerx
-	left: 50%
-	transform: translate(-50% , 0)
-	text-align: center
-
-.centery
-	top: 50%
-
-.centerright
-	position: absolute
-	top: 50%
-	left: 50%
-	transform: translate(0%, -50%)
-
-.font_style_h1_b
-	color: black
-	font-family: simplifica
-	font-size: 15vw
-
-.font_style_h1_w
-	color: white
-	font-family: westernbangbang
-	font-size: 15vw
-
-.font_style_h2_w
-	color: white
-	font-family: opensansregular
-	font-size: 6vw
-
-.font_style_h2_b
-	color: black
-	font-family: opensansregular
-	font-size: 6vw
-
-.font_style_h3_w
-	color: white
-	font-family: opensansregular
-	font-size: 4vw
-	text-transform: bold
-
-.font_style_h3_b
-	color: black
-	font-family: opensansregular
-	font-size: 4vw
-	text-transform: bold
-
-.font_style_h4_w
-	color: white
-	font-family: opensansregular
-	font-size: 3vw
-	text-transform: bold
-
-.font_style_h4_b
-	color: black
-	font-family: opensansregular
-	font-size: 4.5vw
-	text-transform: bold
-
-.font_style_reg_b
-	color: black
-	font-family: opensansregular
-	font-size: 4.5vw
-
-.font_style_reg_w
-	color: white
-	font-family: opensansregular
-	font-size: 4.5vw
-
-.font_style_small_b
-	color: black
-	font-family: opensanslight
-	font-size: 3.5vw
-
-.font_style_small_w
-	color: white
-	font-family: opensanslight
-	font-size: 3.5vw
-
-.font_style_smallest_b
-	color: black
-	font-family: opensanslight
-	font-size: .8em
-
-.font_style_smallest_w
-	color: white
-	font-family: opensanslight
-	font-size: .8em
-
-.font_style_fixed_b
-	color: black
-	font-family: opensanslight
-	font-size: 1em
-
-.font_style_fixed_w
-	color: white
-	font-family: opensanslight
-	font-size: 1em
-
-.heading_transform_down
-	margin-top: 1.5em
-
-.escape
-	color: black
-	font-family: none
-	font-size: default
-	text-transform: none
-	top: 0em
-	left: 0em
-	transform: translate(0em, 0em)
-
-//header
-#header_container
-	position: absolute
-	width: 100%
-	height: 6em
-	overflow: hidden
-	text-align: center
-	z-index: 100
-
-#header_container img
-	width: 100%
-	height: 6em
-
-#header_container2
-	position: absolute
-	width: 100%
-	height: 6em
-	top: 3.5em
-	overflow: hidden
-	text-align: center
-	z-index: 100
-
-#header_container2 img
-	width: 100%
-	height: 6em
- 
-//dkjaegnmkjsf
-#inner_white_box
-	position: absolute
-	width: 20em
-	height: 4em
-	background-color: white
-	opacity: 0.3
-	
-#header_border
-	position: absolute
-	width: 20em
-	height: 4em
-	border: .1em solid white
-
-#header_text
-	position: absolute
-	
-//ikjfmnafkad
-
-#head
-	position: absolute
-	width: 3em
-	top: 0.3em
-	left: 1.85em
-	font-family: simplifica
-	font-size: 3em
-	color: black
-	overflow: hidden
-
-.header_line_left
-	position: absolute
-	background-color: black
-	border: 0em
-	width: 5em
-	height: .15em
-	top: 2.4em
-	left: .5em
-
-.header_line_right
-	position: absolute
-	background-color: black
-	border: 0em
-	width: 5em
-	height: .15em
-	top: 2.4em
-	left: 14.5em
+@import cart
+@import misc
+@import menus
+@import family
 
 
-//sass
-#mainLion
-	position: absolute
-	width: 100%
-	height: 100%
-	overflow-y: auto
+*
+	margin: 0px
+	padding: 0px
 	overflow-x: hidden
 
+body
+	background-color: #421C17 
 
-#homepage
-	position: absolute
-	z-index: 1
+.bg_1
+	background-color: #000 
 
-#blur_over
-	position: absolute
-	width: 100%
-	height: 100%
-	// -webkit-filter: blur(50px)
-	z-index: 200
+.bg_2
+	background-color: #222 
 
-#homepage img
-	width: 100%
+.bg_3
+	background-color: #444 
 
-#homepage_container
-	position: absolute
-	width: 20em
-	height: 33em
-	top: 5em
-	left: 1.7em
-	z-index: 5
-	color: #444
+.bg_4
+	background-color: #666 
 
-#homepage_buttons
+.bg_5
+	background-color: #888 
+
+.bg_6
+	background-color: #fff 
+
+.bg_r
+	background-color: red 
+
+.bg_header
+	background-color: white
+	opacity: 0.3
+	border: 1px white solid
+	padding: 8% 
+
+.ghost_button
+	border: 1px white solid
+	border-radius: 3px 
+
+.padding_20
+	padding: 20px 
+
+.padding_10
+	padding: 10px 
+
+.padding_5
+	padding: 5px 
+
+.padding_1
+	padding: 1px 
+
+.w
+	color: white 
+
+.b
+	color: black 
+
+.r
+	color: red 
+
+.no_border
+	border-radius: 0px
+	border: none 
+
+.hoverglow:hover
+	background-color: #34A217
+	color: #e3e3e3 
+
+.nolink
+	text-decoration: none
+
+.center_text
+	text-align: center 
+
+.heading
+	font-size: 53px
+	font-family: caviardreamsregular 
+
+.heading2
+	font-family: ultimapdultralight
+	font-weight: 900
+	font-size: 30px
+
+.anchor
+	display: block
+	visibility: hidden
 	position: relative
-	margin-top: 115%
+	top: -55px
 
-#homepage_buttons li
-	list-style-type: none
-	display: inline-block
+.darkbrown
+	background-color: #421c17
 
-#homepage_buttons a
+.navindex
+	display: none
+
+#navigationbar.navbar-default .navbar-brand 
+	color: rgba(227, 227, 227, 1)
+
+.navbar-header
+	padding-top: 5px
+	font-family: sanchezregular
+
+#navigationbar.navbar-default 
+	font-size: 20px
+	background-color: rgba(42, 136, 17, 1)
+	border-bottom-width: 0px
+
+#navigationbar.navbar-default .navbar-nav>li>a 
+	color: rgba(189, 189, 189, 1)
+	background-color: rgba(248, 248, 248, 0)
+	text-align: center
+	padding-top: 20px
+
+#navigationbar.navbar-default .navbar-nav>li>a:hover,#navigationbar.navbar-default .navbar-nav>li>a:focus 
+	color: rgba(227, 227, 227, 1)
+
+#navigationbar.navbar-default .navbar-toggle:hover,#navigationbar.navbar-default .navbar-toggle:focus 
+	background-color: #ddd
+
+#navigationbar.navbar-default .navbar-toggle .icon-bar 
+	background-color: #888
+
+#navigationbar.navbar-default .navbar-toggle:hover .icon-bar,#navigationbar.navbar-default .navbar-toggle:focus .icon-bar 
+	background-color: #2a8811
+
+#cartbutton
+	width: 35px 
+
+#index
+	background: url('../images/bbq.png')
+
+#halalimg img
+	width: 90px 
+
+#media img
+	width: 100%
+
+#midlogo
+	width: 100%
+
+.indexitem
+	background-color: #588C38
+	padding-top: 30px
+	padding-bottom: 30px
+	font-size: 25px
+	font-family: bebasregular
+	text-decoration: none
+	color: #b3b3b3
+	text-align: center 
+
+#sectext
+	font-family: opensansregular
+	font-size: 20px 
+
+.secborder img
+	border: 5px solid #B4CCB4 
+
+.sec2height
+	height: 600px
+
+#crewmeet a
+	text-decoration: none
+	color: black
+
+#crewmeet img
+	border-radius: 1000px
+
+.sec3img
+	height: 120px 
+
+.con_button
+	padding: 5px
+	background-color: #C8C8C8
+	font-family: opensansregular
+	font-size: 15px
+	color: #000000
+	border-radius: 10px 
+
+.contact_button
+	padding: 10px
+	background-color: #FFAE00
+	font-family: opensansregular
+	font-size: 30px
 	text-decoration: none
 	color: white
-	padding: 1em
-	border: 0.09em solid white
-	border-radius: 0.4em
-	font-family: opensanslight
-	font-size: 1.1em
-	
-#homepage_buttons a:hover
-	background-color: $color_1
+	border-radius: 10px 
 
-#homepage_subtext
-	position: relative
-	text-align: center
-	color: $font_color2
-	font-family: opensansregular
-	font-size: 1.5em
-	z-index: 4
-	top: 13em
-
-#logobox
+#map_overlay
+	background-color: none
 	position: absolute
-	width: 16em
-	height: 16em
-	top: 2em
+	top: 0 
 
-#logobox img
-	width: 100%
+#click_map_instruct
+	background-color: #C5DDC3
+	text-align: center
+	opacity: 0.8
+	font-family: asgalt
+	font-size: 50px
+	height: 60px 
 
+.footerheading
+	text-align: center
+	font-family: caviardreamsregular
+	font-size: 20px
+	background-color: #C8C8C8
+	border-radius: 5px 
 
+.footerlinks
+	text-align: center
+	font-family: opensansregular
+	font-size: 15px
+	color: #000000 
+
+#rootimg
+	width: 100px
