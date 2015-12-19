@@ -12,7 +12,7 @@ render();
 $("div[id^='combo_item']").each(function(){
 	var id = parseInt(this.id.replace("combo_item", ""), 10);
 	var hammerTime = new Hammer(this, "");
-	hammerTime.on("press", function(){
+	hammerTime.on("tap", function(){
 		var OrderObject = {};
 		var ObjectCache = $('#combo_item' + id).children().first().children().first().children();
 		var titleDetails = ObjectCache.first().next().next();
@@ -44,7 +44,7 @@ $("div[id^='combo_item']").each(function(){
 $("div[id^='side_item']").each(function(){
 	var id = parseInt(this.id.replace("side_item", ""), 10);
 	var hammerTime = new Hammer(this, "");
-	hammerTime.on("press", function(){
+	hammerTime.on("tap", function(){
 		var OrderObject = {};
 		var ObjectCache = $('#side_item' + id).children().first().children().first().children();
 		var titleDetails = ObjectCache.first().next();
