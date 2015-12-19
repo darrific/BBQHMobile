@@ -23,9 +23,9 @@ $(window).scroll(function(){
     $([menu,top_index]).css({'opacity': ((height - scrollPos) / height)});
     
     if (scrollPos >= navOffset) {					
-		$navbar.fadeIn(500);					
+		$navbar.fadeIn(50);					
 	} else {
-		$navbar.fadeOut(500);					
+		$navbar.fadeOut(50);					
 	}
 });
 
@@ -44,6 +44,10 @@ function enablemap(){
 function disablemap(){								
 	$map_overlay.fadeIn(1);
 	$click_map_instruct.fadeIn(500);
+};
+
+function reloadMap(){
+	document.getElementById('framemap').contentWindow.location.reload(true);
 };
 
 var aboutus = $("#aboutus").offset().top;
@@ -72,5 +76,4 @@ $(window).scroll(function(){
 		$("#navcontact").css('border-left','none');
 		$("#navcontact").css('border-right','none');
 	}
-
 });

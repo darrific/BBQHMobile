@@ -1,13 +1,32 @@
-var order = JSON.parse($('#OrderJSON').html());
+var order = {};
 var template = '{{#OrderItems}}<div class="row" id="TableItem"><div class="col-lg-1 col-xl-1 col-md-1 col-sm-1 col-xs-1">{{quantity}}</div><div class="col-lg-5 col-lg-offset-1 col-xl-5 col-xl-offset-1 col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-5 col-xs-offset-1"><b>{{name}}</b></div><div class="col-lg-3 col-lg-offset-0 col-xl-2 col-xl-offset-0 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-0 col-xs-2 col-xs-offset-0">${{price}}</div><div class="col-xs-2 col-xs-offset-0"><span id="removeButton" class="rembut">X</div><br></div><br>{{/OrderItems}}';
 var now = moment();
 
 now.add(30, "m");
-renderTable();
+
+getData();
+
+function getData(){
+	$.post('php/ajax.php', {action: 'getOrders'}, function(data, textStatus, xhr) {
+		if(data.length){
+			order = $.parseJSON(data);
+			renderTable();
+		}
+	});
+}
 
 function renderTable(){
-	$('#OrderTable').html(Mustache.render(template, {OrderItems : order.items}));
-	registerButtons();
+	var totalPrice = 0;
+	if(order.items){
+		for(var i = 0; i < order.items.length; i++){
+			var price = order.items[i].price;
+			var quantity = order.items[i].quantity;
+			totalPrice += (price*quantity);	
+		}
+		$('#totalPrice').html('<span id="totalPriceSpan">$'+totalPrice+'.00</span>');
+		$('#OrderTable').html(Mustache.render(template, {OrderItems : order.items}));
+		registerButtons();
+	}
 }
 
 function registerButtons(){
@@ -56,8 +75,10 @@ $('#placeOrderButton').on("click", function(){
 		order.pickup = time.format("X");
 		order.consumerName = name;
 		order.phoneNumber = number;
+		// alert(JSON.stringify(order));
+		alert("Order Posted");
 		$.post('php/ajax.php', {'OrderJSON': JSON.stringify(order), 'action': 'sendOrder'}, function(data, textStatus, xhr) {
-			alert(data);
+			// alert(data);
 		});
 	}else{
 		alert("You must fill out all of the fields!");
