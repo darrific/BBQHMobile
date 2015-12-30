@@ -50,7 +50,7 @@
                 </li>
                 <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a id="navcontact" href="index.html#contactus">Contact Us</a>
                 </li>
-                <li class="col-lg-1"><a style="color: rgba(227, 227, 227, 1); border-left:solid 1px #52AE3D; border-right:solid 1px #52AE3D;" id="cartli" href="cart.php"><img id="cartbutton" src="Icons Pack/SVG/shopping112.svg" alt="Cart"></a>
+                <li class="col-lg-1"><a style="color: rgba(227, 227, 227, 1); border-left:solid 1px #52AE3D; border-right:solid 1px #52AE3D;" id="cartli" href="cart.php"><img id="cartbutton" src="images/SVG/shopping112.svg" alt="Cart"></a>
                 </li>
             </ul>
         </div>
