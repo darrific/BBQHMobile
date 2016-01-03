@@ -1,7 +1,20 @@
+#order_background {
+  background: url(../images/small/untitled-444.jpg) 50% 0 fixed;
+  height: auto;
+  margin: 0 auto;
+  width: 100%;
+  position: relative; }
+
+#order_background2 {
+  background: url(../images/small/untitled-408.jpg) 50% 0 fixed;
+  height: auto;
+  margin: 0 auto;
+  width: 100%;
+  position: relative; }
+
 .badge_r {
-  background-color: red;
-  width: 10px;
-  border-radius: 10px; }
+  background-color: #CACACA;
+  color: #000; }
 
 #order_image img {
   width: 70px; }
@@ -17,8 +30,18 @@
   font-family: opensansregular;
   font-size: 13px; }
 
+#cart_background {
+  background: url(../images/small/untitled-483-2.jpg) 50% 0 fixed;
+  height: auto;
+  margin: 0 auto;
+  width: 100%;
+  position: relative; }
+
 .ordername {
   color: #BCBCBC; }
+
+.warningmessage {
+  border-radius: 10px; }
 
 #Tableitem {
   background-color: #eee;
@@ -87,9 +110,17 @@
   cursor: pointer;
   z-index: 102; }
 
+#menu_background {
+  background: url(../images/small/pit4.png) 50% 0 fixed;
+  height: auto;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  background-size: 100%; }
+
 #menuflowery {
   font-family: opensansregular;
-  font-size: 15px; }
+  font-size: 17px; }
 
 #allitems img {
   cursor: pointer; }
@@ -279,8 +310,7 @@ body {
   height: auto;
   margin: 0 auto;
   width: 100%;
-  position: relative;
-  background-size: 100%; }
+  position: relative; }
 
 #sectext {
   font-family: opensansregular;
@@ -296,15 +326,7 @@ body {
   height: 120px; }
 
 #cus {
-  background: url(../images/small/pit9.png) 50% 0 fixed;
-  height: auto;
-  margin: 0 auto;
-  width: 100%;
-  position: relative;
-  background-size: 100%; }
-
-#contactsection {
-  background: url(../images/header1.jpg) 50% 0 fixed;
+  background: url(../images/small/untitled-476.jpg) 50% 0 fixed;
   height: auto;
   margin: 0 auto;
   width: 100%;
@@ -336,7 +358,8 @@ body {
   opacity: 0.8;
   font-family: asgalt;
   font-size: 50px;
-  height: 60px; }
+  height: 72px;
+  padding-top: 1px; }
 
 .footerheading {
   text-align: center;

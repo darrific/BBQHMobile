@@ -63,6 +63,7 @@
 <script type="text/javascript" src="js/scroll.js"></script>
 <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="js/velocity.js"></script>
+<script type="text/javascript" src="js/parallaxscroll.js"></script>
 <script type="text/javascript" src="js/hammer.min.js"></script>
 <script type="text/javascript" src="js/mustache.js"></script>
 
@@ -103,24 +104,24 @@
         </div>
     </div>
 </div>
-
+<section id="order_background" data-speed="8" data-type="vbackground">
 <br><br><br><br>
 <div class="row">
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12 center_text heading">Place An Order</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12 center_text w heading">Place An Order</div>
 </div>
 <br>
 <br>
 <div class="row">
-	<div class="col-xs-12 text-center">
+	<div class="col-xs-12 w text-center">
 		<h3>Why wait in line?</h3>
 	</div>
-	<div class="col-xs-12 text-center">
+	<div class="col-xs-12 w text-center">
 		<h4><i>Introducing our revolutionary Express Ordering System (EOS)</i></h4>
 	</div>
 </div>
 <br>
 <div class="row">
-	<div class="col-lg-10 col-lg-offset-1 col-xs-10 col-xs-offset-1 text-center">
+	<div class="col-lg-10 col-lg-offset-1 col-xs-10 col-xs-offset-1 bg_4 w text-center">
 		<div class="col-lg-2 col-lg-offset-1 col-xl-2 col-xl-offset-1 col-md-6 col-sm-6 col-xs-12">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12">
 				<h3>1</h3>
@@ -182,28 +183,28 @@
 	</div>
 </div>
 <div class="row">
-	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><hr></div>
+	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
 	<div class="col-lg-6 col-lg-offset-3 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 		<a id="ConfirmURL">
 			<button id="ConfirmButton" class="btn btn-warning btn-block"><br class="hidden-xs">Confirm Order<br class="hidden-xs"><br class="hidden-xs"></button>
 		</a>
 	</div>
-	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><hr></div>
+	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
 	<div class="col-lg-6 col-lg-offset-3 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 		<a id="ResetURL">
 			<button id="ResetButton" class="btn btn-danger btn-block"><br class="hidden-xs">Reset Order<br class="hidden-xs"><br class="hidden-xs"></button>
 		</a>
 	</div>
-	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><hr></div>
+	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
 </div>
 <div class="row">
-	<div class="col-lg-12 col-md-12 col-xl-12 col-sm-12 col-xs-12 text-center"> 
+	<div class="col-lg-12 col-md-12 col-xl-12 col-sm-12 col-xs-12 w text-center"> 
 		<h4 class="padding_1">Press and hold to add an order. Repeat as necessary.</h4>
 	</div>
 </div>
 <br>
 <div class="row">
-	<div class="col-lg-6 col-lg-offset-3 col-xs-10 col-xs-offset-1">
+	<div class="col-lg-6 col-lg-offset-3 col-xs-10 col-xs-offset-1 w">
 		<b class="heading2">Combination Meals</b>
 	</div>
 </div>
@@ -211,9 +212,12 @@
 <div class="row">
 	<div id="CombosUI" class="noselect col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"></div>
 </div>
-<br><br><br><br>
+<br><br>
+</section>
+<section id="order_background2" data-speed="25" data-type="vbackground">
+<br><br>
 <div class="row">
-	<div class="col-lg-6 col-lg-offset-3 col-xs-10 col-xs-offset-1">
+	<div class="col-lg-6 col-lg-offset-3 col-xs-10 col-xs-offset-1 w">
 		<b class="heading2">Sides</b>
 	</div>
 </div>
@@ -223,22 +227,23 @@
 </div>
 <br>
 <div class="row">
-	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><hr></div>
+	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
 	<div class="col-lg-6 col-lg-offset-3 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 		<a id="ConfirmURL">
 			<button id="ConfirmButton2" class="btn btn-warning btn-block"><br class="hidden-xs">Confirm Order<br class="hidden-xs"><br class="hidden-xs"></button>
 		</a>
 	</div>
-	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><hr></div>
+	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
 	<div class="col-lg-6 col-lg-offset-3 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 		<a id="ResetURL">
 			<button id="ResetButton2" class="btn btn-danger btn-block"><br class="hidden-xs">Reset Order<br class="hidden-xs"><br class="hidden-xs"></button>
 		</a>
 	</div>
-	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><hr></div>
+	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
 </div>
-<br><br><br>
+</section>
 
+<br><br><br>
 <div class="row" id="footer">
 	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2 center_text">
 			<div class="col-lg-4 col-md-4 col-xl-4 col-xs-12 col-sm-12">

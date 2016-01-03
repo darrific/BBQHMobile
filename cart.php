@@ -14,6 +14,7 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/parallaxscroll.js"></script>
 <script type="text/javascript" src="js/moment.js"></script>
 <script type="text/javascript" src="js/velocity.js"></script>
 <script type="text/javascript" src="js/hammer.min.js"></script>
@@ -56,17 +57,17 @@
         </div>
     </div>
 </div>
-
+<section id="cart_background" data-speed="5" data-type="vbackground">
 <br><br><br><br>
 <div class="row">
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12 center_text heading">Checkout</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12 center_text w heading">Checkout</div>
 </div>
 <br>
 <br>
 <div class="row">
 	<div class="col-xs-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
 		<div class="container">
-			<h3 class="center_text">Last chance to edit your order.</h3>
+			<h3 class="w center_text">Last chance to edit your order.</h3>
 			<br>	
 		</div>
 	</div>
@@ -83,9 +84,9 @@
 <br><br>
 <div class="row" id="cart_table_list">
 	<div class="col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3 col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 text-center">
-		<div class="col-lg-1 col-xl-1 col-md-1 col-sm-1 col-xs-1">Qty</div>
-		<div class="col-lg-5 col-lg-offset-1 col-xl-5 col-xl-offset-1 col-md-4 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-5 col-xs-offset-1">Item</div>
-		<div class="col-lg-3 col-lg-offset-0 col-xl-2 col-xl-offset-0 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-2 col-xs-offset-0">Price</div>
+		<div class="col-lg-1 col-xl-1 col-md-1 col-sm-1 col-xs-1 w">Qty</div>
+		<div class="col-lg-5 col-lg-offset-1 col-xl-5 col-xl-offset-1 col-md-4 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-5 col-xs-offset-1 w">Item</div>
+		<div class="col-lg-3 col-lg-offset-0 col-xl-2 col-xl-offset-0 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-2 col-xs-offset-0 w">Price</div>
 		<hr>
 	</div>
 </div>
@@ -94,11 +95,11 @@
 		<div id="OrderTable"></div>
 	</div>
 </div>
-<hr>
+<br>
 <div class="row">
 	<div class="container ">
 		<div class="row">
-			<div class="col-lg-12 col-lg-offset-0 col-xl-12 col-xl-offset-0 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 text-center b"><h3>Enter Information</h3></div>
+			<div class="col-lg-12 col-lg-offset-0 col-xl-12 col-xl-offset-0 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 text-center w"><h3>Enter Information</h3></div>
 			<br>
 			<div class="col-xs-10 col-xs-offset-1">
 				<div class="jumbotron">
@@ -116,23 +117,24 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-12 text-center b"><h3>Pickup Time</h3><div id="time" class="bg_9 col-lg-4 col-lg-offset-4 col-xl-4 col-xl-offset-4 col-md-4 col-md-offset-4 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0"></div></div>
+			<div class="col-xs-12 text-center w"><h3>Pickup Time</h3><div id="time" class="bg_9 col-lg-4 col-lg-offset-4 col-xl-4 col-xl-offset-4 col-md-4 col-md-offset-4 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0"></div></div>
 			<br>
 		</div>
 	</div>
 </div>
 <br><br>
 <div class="row">
-	<div class="col-xs-10 col-xs-offset-1 r center_text">
+	<div class="col-xs-10 col-xs-offset-1 col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 bg_9 r warningmessage center_text">
 		<i>You will be required to collect your order within one hour of the time given. Your order will be cancelled one hour after the set pickup time, with no exceptions.
-			<br>By pressing/clicking the "Place Order" button, you agree to our Terms and Conditions of use here</p></h6></i>
+			<br>By clicking the "Place Order" button, you agree to our Terms and Conditions of use here</p></h6></i>
 	</div>
 </div>
-<hr>
+<br>
 <div class="col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 	<button id="placeOrderButton" type="button" class="btn btn-success btn-block text-center"><div class="hidden-xs"><br></div>Place Order<div class="hidden-xs"><br></div></button>
 </div>
-<br><br><br><br><hr><br><br><br>
+<br><br><br><br><br><br></section>
+<br><br><br>
 <div class="row" id="footer">
 	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2 center_text">
 			<div class="col-lg-4 col-md-4 col-xl-4 col-xs-12 col-sm-12">

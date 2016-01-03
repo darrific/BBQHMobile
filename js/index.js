@@ -46,10 +46,6 @@ function disablemap(){
 	$click_map_instruct.fadeIn(500);
 };
 
-function reloadMap(){
-	document.getElementById('framemap').contentWindow.location.reload(true);
-};
-
 var aboutus = $("#aboutus").offset().top;
 var contactus = $("#contactus").offset().top;
 
