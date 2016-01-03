@@ -1,5 +1,3 @@
-/*var imgtemplate = */
-
 $("#allitems img").click(function(imgtag){
     var theimg= imgtag.target;
     var thesrc = theimg.getAttribute("src");

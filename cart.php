@@ -14,6 +14,7 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/scroll.js"></script>
 <script type="text/javascript" src="js/parallaxscroll.js"></script>
 <script type="text/javascript" src="js/moment.js"></script>
 <script type="text/javascript" src="js/velocity.js"></script>

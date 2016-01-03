@@ -119,9 +119,46 @@ $('#ResetButton').on("click", function(){
 			render();
 	    }
 	});
+	  var scrollPos = $(window).scrollTop();
+	  $("#resetpopup").css('margin-top',scrollPos);
+	  $("#resetpopup").fadeIn(200).delay(2000).fadeOut(200);
+});
+
+$('#ResetButton2').on("click", function(){
+	  $.ajax({
+	  	cache: false,
+	  	method: "POST",
+	    url: 'php/ajax.php', 
+	    data: {action:'clearOrderJSON'},
+	    complete: function() {
+	      	order = {};
+	      	order.items = [];
+	      	for(var o in combos){
+	      		combos[o].quantity = 0;
+	      	}
+	      	for(var o in sides){
+	      		sides[o].quantity = 0;
+	      	}
+			render();
+	    }
+	});
+	  var scrollPos = $(window).scrollTop();
+	  $("#resetpopup").css('margin-top',scrollPos);
+	  $("#resetpopup").fadeIn(200).delay(2000).fadeOut(200);
+});
+
+$(window).scroll(function(){
+	var scrollPos = $(window).scrollTop();
+	$("#resetpopup").css('margin-top',scrollPos);
 });
 
 $('#ConfirmButton').on("click", function(){
+	$.post('php/ajax.php', {'OrderJSON': JSON.stringify(order), 'action': 'updateOrderJSON'}, function(data, textStatus, xhr) {
+		$(location).attr('href','cart.php');
+	});
+});
+
+$('#ConfirmButton2').on("click", function(){
 	$.post('php/ajax.php', {'OrderJSON': JSON.stringify(order), 'action': 'updateOrderJSON'}, function(data, textStatus, xhr) {
 		$(location).attr('href','cart.php');
 	});
