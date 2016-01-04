@@ -22,6 +22,7 @@
 <script type="text/javascript" src="js/mustache.js"></script>
 
 <head>
+<script type="text/javascript" src="js/custom.js"></script>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,6 +31,8 @@
 </head>
 
 <body>
+<div class="pageload hidden-xs"></div>
+
 <div id="navigationbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header"><a class="navbar-brand" href="index.html">Original Bar-B-Que Hut</a>
