@@ -1,10 +1,3 @@
-<?php
-	session_start();
-	if(isset($_SESSION["OrderJSON"])){
-		echo '<div id="OrderJSON" style="display:none;">'.$_SESSION["OrderJSON"].'</div>';
-	}
-?>
-
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/animate.css">
 <link rel="stylesheet" type="text/css" href="css/fonts.css">
@@ -61,7 +54,7 @@
         </div>
     </div>
 </div>
-<section id="cart_background" data-speed="5" data-type="vbackground">
+<section id="cart_background" data-speed="11" data-type="vbackground">
 <br><br><br><br>
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12 center_text w heading">Checkout</div>
@@ -76,68 +69,72 @@
 		</div>
 	</div>
 </div>
-<div class="row">
-	<div class="col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-		<a href="order.php">
-			<button type="button" class="btn btn-info btn-block text-center">
-				Add An Item
-			</button>
-		</a>
+<div class="col-lg-8 col-lg-offset-2 bg_2 b_rad">
+	<br><br>
+	<div class="row">
+		<div class="col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+			<a href="order.php">
+				<button type="button" class="btn btn-info btn-block text-center">
+					Add An Item
+				</button>
+			</a>
+		</div>
 	</div>
-</div>
-<br><br>
-<div class="row" id="cart_table_list">
-	<div class="col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3 col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 text-center">
-		<div class="col-lg-1 col-xl-1 col-md-1 col-sm-1 col-xs-1 w">Qty</div>
-		<div class="col-lg-5 col-lg-offset-1 col-xl-5 col-xl-offset-1 col-md-4 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-5 col-xs-offset-1 w">Item</div>
-		<div class="col-lg-3 col-lg-offset-0 col-xl-2 col-xl-offset-0 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-2 col-xs-offset-0 w">Price</div>
-		<hr>
+	<br><br><br>
+	<div class="row" id="cart_table_list">
+		<div class="col-lg-10 col-lg-offset-1 col-xl-6 col-xl-offset-3 col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 text-center">
+			<div class="col-lg-1 col-xl-1 col-md-1 col-sm-1 col-xs-1">Qty</div>
+			<div class="col-lg-5 col-lg-offset-1 col-xl-5 col-xl-offset-1 col-md-4 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-5 col-xs-offset-1">Item</div>
+			<div class="col-lg-3 col-lg-offset-0 col-xl-2 col-xl-offset-0 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-2 col-xs-offset-0">Price</div>
+			<hr>
+		</div>
 	</div>
-</div>
-<div class="row">
-	<div class="col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3 col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 text-center">
-		<div id="OrderTable"></div>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1 col-xl-6 col-xl-offset-3 col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 text-center">
+			<div id="OrderTable"></div>
+		</div>
 	</div>
-</div>
-<br>
-<div class="row">
-	<div class="container ">
-		<div class="row">
-			<div class="col-lg-12 col-lg-offset-0 col-xl-12 col-xl-offset-0 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 text-center w"><h3>Enter Information</h3></div>
-			<br>
-			<div class="col-xs-10 col-xs-offset-1">
-				<div class="jumbotron">
-					<form role="form">
-						<div class="form-group">
-							<label for="consumerName">Name</label>
-							<input type="text" class="form-control" id="consumerName">
-						</div>
-						<div class="form-group">
-							<label for="consumerNo">Cellphone</label>
-							<input type="text" class="form-control" id="consumerNo">
-						</div>
-					</form>
+	<br>
+	<div class="row">
+		<div class="container ">
+			<div class="row">
+				<div class="col-lg-12 col-lg-offset-0 col-xl-12 col-xl-offset-0 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 text-center"><h3>Enter Information</h3></div>
+				<br>
+				<div class="col-xs-10 col-xs-offset-1">
+					<div class="jumbotron">
+						<form role="form">
+							<div class="form-group">
+								<label for="consumerName">Name</label>
+								<input type="text" class="form-control" id="consumerName">
+							</div>
+							<div class="form-group">
+								<label for="consumerNo">Cellphone</label>
+								<input type="text" class="form-control" id="consumerNo">
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-12 text-center w"><h3>Pickup Time</h3><div id="time" class="bg_9 col-lg-4 col-lg-offset-4 col-xl-4 col-xl-offset-4 col-md-4 col-md-offset-4 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0"></div></div>
-			<br>
+			<div class="row">
+				<div class="col-xs-12 text-center"><h3>Pickup Time</h3><div id="time" class="bg_9 col-lg-4 col-lg-offset-4 col-xl-4 col-xl-offset-4 col-md-4 col-md-offset-4 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0"></div></div>
+				<br>
+			</div>
 		</div>
 	</div>
-</div>
-<br><br>
-<div class="row">
-	<div class="col-xs-10 col-xs-offset-1 col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 bg_9 r warningmessage center_text">
-		<i>You will be required to collect your order within one hour of the time given. Your order will be cancelled one hour after the set pickup time, with no exceptions.
-			<br>By clicking the "Place Order" button, you agree to our Terms and Conditions of use here</p></h6></i>
+	<br><br>
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1 col-lg-10 col-lg-offset-1 col-xl-6 col-xl-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 bg_9 r warningmessage center_text">
+			<i>You will be required to collect your order within one hour of the time given. Your order will be cancelled one hour after the set pickup time, with no exceptions.
+				<br>By clicking the "Place Order" button, you agree to our Terms and Conditions of use here</p></h6></i>
+		</div>
 	</div>
+	<br>
+	<div class="col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		<button id="placeOrderButton" type="button" class="btn btn-success btn-block text-center"><div class="hidden-xs"><br></div>Place Order<div class="hidden-xs"><br></div></button>
+	</div>
+	<br><br><br><br><br>
 </div>
-<br>
-<div class="col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-	<button id="placeOrderButton" type="button" class="btn btn-success btn-block text-center"><div class="hidden-xs"><br></div>Place Order<div class="hidden-xs"><br></div></button>
-</div>
-<br><br><br><br><br><br></section>
+</section>
 <br><br><br>
 <div class="row" id="footer">
 	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2 center_text">

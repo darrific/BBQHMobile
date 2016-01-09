@@ -1,61 +1,3 @@
-<?php
-	require 'php/dbconnect.php';
-	session_start();
-
-	$combos = [];
-	$sides = [];
-
-	$comboQuery = 'SELECT comboID,name,details,price,image FROM combos';
-	if(!($comboResult = $db->query($comboQuery))){
-		echo "Error: Query failed to execute: \n";
-	    echo "Query: ". $comboQuery."\n";
-	    echo "Errno: ". $db->errno."\n";
-	    echo "Error: ". $db->error."\n";
-	    exit;
-	}
-	$sidesQuery = 'SELECT sideID,name,details,price FROM sides';
-	if(!($sidesResult = $db->query($sidesQuery))){
-		echo "Error: Query failed to execute: \n";
-	    echo "Query: ". $sidesQuery."\n";
-	    echo "Errno: ". $db->errno."\n";
-	    echo "Error: ". $db->error."\n";
-	    exit;
-	}
-
-	while($combo = $comboResult->fetch_assoc()){
-		$combo['quantity'] = 0;
-		if (isset($_SESSION['OrderJSON'])){
-			$order = json_decode($_SESSION['OrderJSON']);
-			foreach($order->items as $item){
-				if($combo['name'] == $item->name){
-					$combo['quantity'] = $item->quantity;
-				}
-			}
-		}
-		array_push($combos, $combo);
-	}
-	while($side = $sidesResult->fetch_assoc()){
-		$side['quantity'] = 0;
-		if (isset($_SESSION['OrderJSON'])){
-			$order = json_decode($_SESSION['OrderJSON']);
-			foreach($order->items as $item){
-				if($side['name'] == $item->name){
-					$side['quantity'] = $item->quantity;
-				}
-			}
-		}
-		array_push($sides, $side);
-	}
-
-
-
-	if (isset($_SESSION['OrderJSON'])){
-		echo '<div id="OrderJSON" style="display:none;">'.$_SESSION['OrderJSON'].'</div>'."\n";
-	}
-	echo '<div id="ComboJSON" style="display:none;">'.json_encode($combos).'</div>'."\n";
-	echo '<div id="SidesJSON" style="display:none;">'.json_encode($sides).'</div>'."\n";
-?>
-
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/animate.css">
 <link rel="stylesheet" type="text/css" href="css/fonts.css">
@@ -64,7 +6,6 @@
 <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="js/velocity.js"></script>
 <script type="text/javascript" src="js/parallaxscroll.js"></script>
-<script type="text/javascript" src="js/hammer.min.js"></script>
 <script type="text/javascript" src="js/mustache.js"></script>
 
 <head>
@@ -111,7 +52,7 @@
         </div>
     </div>
 </div>
-<section id="order_background" data-speed="8" data-type="vbackground">
+<section id="order_background" data-speed="18" data-type="vbackground">
 <br><br><br><br>
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12 center_text w heading">Place An Order</div>
@@ -189,67 +130,70 @@
 		</div>
 	</div>
 </div>
-<div class="row">
-	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
-	<div class="col-lg-6 col-lg-offset-3 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-		<a id="ConfirmURL">
-			<button id="ConfirmButton" class="btn btn-warning btn-block"><br class="hidden-xs">Confirm Order<br class="hidden-xs"><br class="hidden-xs"></button>
-		</a>
-	</div>
-	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
-	<div class="col-lg-6 col-lg-offset-3 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-		<a id="ResetURL">
-			<button id="ResetButton" class="btn btn-danger btn-block"><br class="hidden-xs">Reset Order<br class="hidden-xs"><br class="hidden-xs"></button>
-		</a>
-	</div>
-	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
-</div>
-<div class="row">
-	<div class="col-lg-12 col-md-12 col-xl-12 col-sm-12 col-xs-12 w text-center"> 
-		<h4 class="padding_1">Press and hold to add an order. Repeat as necessary.</h4>
-	</div>
-</div>
-<br>
-<div class="row">
-	<div class="col-lg-6 col-lg-offset-3 col-xs-10 col-xs-offset-1 w">
-		<b class="heading2">Combination Meals</b>
-	</div>
-</div>
-<br>
-<div class="row">
-	<div id="CombosUI" class="noselect col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"></div>
-</div>
 <br><br>
+<div class="col-lg-8 col-lg-offset-2 b_rad bg_2">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
+		<div class="col-lg-8 col-lg-offset-2 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+			<a id="ConfirmURL">
+				<button id="ConfirmButton" class="btn btn-warning btn-block"><br class="hidden-xs">Confirm Order<br class="hidden-xs"><br class="hidden-xs"></button>
+			</a>
+		</div>
+		<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
+		<div class="col-lg-8 col-lg-offset-2 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+			<a id="ResetURL">
+				<button id="ResetButton" class="btn btn-danger btn-block"><br class="hidden-xs">Reset Order<br class="hidden-xs"><br class="hidden-xs"></button>
+			</a>
+		</div>
+		<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-xl-12 col-sm-12 col-xs-12 w text-center"> 
+			<h4 class="padding_1">Press and hold to add an order. Repeat as necessary.</h4>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1 col-xs-10 col-xs-offset-1">
+			<b class="heading2">Combination Meals</b>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div id="CombosUI" class="noselect col-lg-10 col-lg-offset-1 col-xl-6 col-xl-offset-3 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"></div>
+	</div>
+	<br><br><br><br>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1 col-xs-10 col-xs-offset-1">
+			<b class="heading2">Sides</b>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div id="SidesUI" class="noselect col-lg-10 col-lg-offset-1 col-xl-6 col-xl-offset-3 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"></div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
+		<div class="col-lg-8 col-lg-offset-2 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+			<a id="ConfirmURL">
+				<button id="ConfirmButton2" class="btn btn-warning btn-block"><br class="hidden-xs">Confirm Order<br class="hidden-xs"><br class="hidden-xs"></button>
+			</a>
+		</div>
+		<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
+		<div class="col-lg-8 col-lg-offset-2 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+			<a id="ResetURL">
+				<button id="ResetButton2" class="btn btn-danger btn-block"><br class="hidden-xs">Reset Order<br class="hidden-xs"><br class="hidden-xs"></button>
+			</a>
+		</div>
+		<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
+	</div>
+</div>
+<div class="visible-lg">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
 </section>
-<section id="order_background2" data-speed="25" data-type="vbackground">
-<br><br>
-<div class="row">
-	<div class="col-lg-6 col-lg-offset-3 col-xs-10 col-xs-offset-1 w">
-		<b class="heading2">Sides</b>
-	</div>
-</div>
-<br>
-<div class="row">
-	<div id="SidesUI" class="noselect col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"></div>
-</div>
-<br>
-<div class="row">
-	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
-	<div class="col-lg-6 col-lg-offset-3 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-		<a id="ConfirmURL">
-			<button id="ConfirmButton2" class="btn btn-warning btn-block"><br class="hidden-xs">Confirm Order<br class="hidden-xs"><br class="hidden-xs"></button>
-		</a>
-	</div>
-	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
-	<div class="col-lg-6 col-lg-offset-3 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-		<a id="ResetURL">
-			<button id="ResetButton2" class="btn btn-danger btn-block"><br class="hidden-xs">Reset Order<br class="hidden-xs"><br class="hidden-xs"></button>
-		</a>
-	</div>
-	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
-</div>
-</section>
-
 <br><br><br>
 <div class="row" id="footer">
 	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2 center_text">
@@ -324,9 +268,4 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/order.js"></script>
-	<script>
-		$(document).ready(function(){
-			$
-		});
-	</script>
 </footer>
