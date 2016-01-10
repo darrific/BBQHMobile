@@ -39,7 +39,7 @@
         </div>
         <div class="collapse navbar-collapse navbar-menubuilder">
             <ul class="nav navbar-nav navbar-center col-lg-10 col-xl-10">
-                <li class="col-lg-2 col-lg-offset-1 col-xl-2 col-xl-offset-0"><a href="index.html">Home</a>
+                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a href="index.html">Home</a>
                 </li>
                 <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a href="menu.html">See Our Menu</a>
 				</li>
@@ -49,7 +49,7 @@
                 </li>
                 <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a id="navcontact" href="index.html#contactus">Contact Us</a>
                 </li>
-                <li class="col-lg-1"><a style="color: rgba(227, 227, 227, 1); border-left:solid 1px #52AE3D; border-right:solid 1px #52AE3D;" id="cartli" href="cart.php"><img id="cartbutton" src="images/SVG/shopping112.svg" alt="Cart"></a>
+                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a style="color: rgba(227, 227, 227, 1); border-left:solid 1px #52AE3D; border-right:solid 1px #52AE3D;" href="cart.php">Cart</a>
                 </li>
             </ul>
         </div>
@@ -75,7 +75,7 @@
 	<div class="row">
 		<div class="col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 			<a href="order.php">
-				<button type="button" class="btn btn-info btn-block text-center">
+				<button type="button" style="font-size:18px;" class="btn btn-info btn-block text-center">
 					Add An Item
 				</button>
 			</a>
@@ -131,12 +131,14 @@
 	</div>
 	<br>
 	<div class="col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-		<button id="placeOrderButton" type="button" class="btn btn-success btn-block text-center"><div class="hidden-xs"><br></div>Place Order<div class="hidden-xs"><br></div></button>
+		<button id="placeOrderButton" style="font-size:18px;" type="button" class="btn btn-success btn-block text-center">Place Order</button>
 	</div>
 	<br><br><br><br><br>
 </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
 </section>
-<br><br><br>
+<br><br>
 <div class="row" id="footer">
 	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2 center_text">
 			<div class="col-lg-4 col-md-4 col-xl-4 col-xs-12 col-sm-12">
