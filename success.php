@@ -63,16 +63,11 @@
 </div>
 <div class="row">
 	<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 col-xl-8 col-xl-offset-2 text-center">
-		<div class="jumbotron">
+		<div class="jumbotron b_rad">
 			<div class="col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-12 col-md-offset-0 col-lg-12 col-lg-offset-0 col-xl-12 col-xl-offset-0 text-center">
 				<h3><b>Summary</b></h3>
 			</div>
-			<div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0 col-xl-12 col-xl-offset-0">
-				<b>Name:</b> Darrien Persad <br>
-				<b>Telephone:</b> 333-3333<br>
-				<b>Pickup time:</b> 8:56pm<br>
-				<b>Order:</b> Chicken<br>
-				<h4><b>Number:</b> 1234<br></h4>
+			<div id="injectHere" class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0 col-xl-12 col-xl-offset-0">
 			</div>
 		</div>
 	</div>
@@ -164,4 +159,25 @@
 <footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/mustache.js"></script>
+	<script type="text/javascript" src="js/moment.js"></script>
+	<script>
+		var id = "<?php echo $_GET['id']; ?>";
+		var order = {};
+
+		$.post('php/ajax.php', {action: 'getOrder', ID:id}, function(data, textStatus, xhr) {
+			order = jQuery.parseJSON(data);
+			var time = moment(order.pickup, "X").format("h:mm A");
+			order.pickup = time;
+			order.id = pad(id, 4);
+			var template = '<b>Name:</b>{{consumerName}}<br><b>Telephone:</b>{{phoneNumber}}<br><b>Pickup time:</b>{{pickup}}<br><h4><b>Number:</b><br>{{id}}</h4>';
+			$('#injectHere').html(Mustache.render(template, order));
+		});
+
+		function pad(n, width, z) {
+		  z = z || '0';
+		  n = n + '';
+		  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+		}
+	</script>
 </footer>

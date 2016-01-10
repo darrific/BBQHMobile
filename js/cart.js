@@ -1,5 +1,5 @@
 var order = {};
-var template = '{{#OrderItems}}<div class="row bg_6 padding_10" id="TableItem"><div class="col-xs-2">{{quantity}}</div><div class="col-xs-4 col-xs-offset-0"><b>{{name}}</b></div><div class="col-xs-2 col-xs-offset-0">${{price}}</div><div class="col-xs-3 col-xs-offset-0"><span id="removeButton" class="rembut w del padding_1">DELETE</div><br></div><br>{{/OrderItems}}';
+var template = '{{#OrderItems}}<div class="row" id="TableItem"><div class="col-lg-1 col-xl-1 col-md-1 col-sm-1 col-xs-1">{{quantity}}</div><div class="col-lg-5 col-lg-offset-1 col-xl-5 col-xl-offset-1 col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-5 col-xs-offset-1"><b>{{name}}</b></div><div class="col-lg-3 col-lg-offset-0 col-xl-2 col-xl-offset-0 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-0 col-xs-2 col-xs-offset-0">${{price}}</div><div class="col-xs-2 col-xs-offset-0"><span id="removeButton" class="rembut">X</div><br></div><br>{{/OrderItems}}';
 var now = moment();
 
 now.add(30, "m");
@@ -31,14 +31,13 @@ function renderTable(){
 
 function registerButtons(){
 	$("span[id^='removeButton']").each(function(){
-		var hammer = new Hammer(this, "");
 		var ObjectCache = $(this).parent();
 
 		var price = ObjectCache.prev().html().replace("$", "");
 		var name = ObjectCache.prev().prev().html().replace("<b>", "").replace("</b>", "");
 		var quantity = ObjectCache.prev().prev().prev().html();
 
-		hammer.on("tap", function(){
+		$(this).on("click", function(){
 			for(var i = 0; i < order.items.length; i++){
 				var orderQuantity = order.items[i].quantity;
 				if((price == order.items[i].price) && (name == order.items[i].name) && (quantity == orderQuantity)){
