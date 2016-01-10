@@ -39,7 +39,6 @@ function registerButtons(){
 			for(var o in order){
 				if(order[o].id == id){
 					$.post('php/ajax.php', {action:"updateOrderStatus", status:"Packed", id:order[o].realID}, function(data, textStatus, xhr) {
-						alert(data);
 						updatePackerUI();
 					});
 				}
@@ -68,9 +67,12 @@ function updatePackerUI(){
 				render();
 				registerButtons();
 			}
+			for(var o in order){
+				$.post('php/ajax.php', {action:"reachedTablet", id:order[o].realID}, function(data, textStatus, xhr) {});
+			}
     },
     complete: function() {
-      setTimeout(updatePackerUI, 15000);
+      setTimeout(updatePackerUI, 10000);
     }
   });
 }
