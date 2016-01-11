@@ -162,14 +162,12 @@
 	<script type="text/javascript" src="js/mustache.js"></script>
 	<script type="text/javascript" src="js/moment.js"></script>
 	<script>
-		var id = "<?php echo $_GET['id']; ?>";
 		var order = {};
-
-		$.post('php/ajax.php', {action: 'getOrder', ID:id}, function(data, textStatus, xhr) {
+		$.post('php/ajax.php', {action: 'getInfo'}, function(data, textStatus, xhr) {
 			order = jQuery.parseJSON(data);
 			var time = moment(order.pickup, "X").format("h:mm A");
 			order.pickup = time;
-			order.id = pad(id, 4);
+			order.id = pad(order.id, 4);
 			var template = '<b>Name:</b>{{consumerName}}<br><b>Telephone:</b>{{phoneNumber}}<br><b>Pickup time:</b>{{pickup}}<br><h4><b>Number:</b><br>{{id}}</h4>';
 			$('#injectHere').html(Mustache.render(template, order));
 		});

@@ -7,6 +7,7 @@
 <script type="text/javascript" src="js/velocity.js"></script>
 <script type="text/javascript" src="js/parallaxscroll.js"></script>
 <script type="text/javascript" src="js/mustache.js"></script>
+<script type="text/javascript" src="js/hammer.min.js"></script>
 
 <head>
 <script type="text/javascript" src="js/custom.js"></script>
@@ -37,7 +38,7 @@
         </div>
         <div class="collapse navbar-collapse navbar-menubuilder">
             <ul class="nav navbar-nav navbar-center col-lg-10 col-xl-10">
-                <li class="col-lg-2 col-lg-offset-1 col-xl-2 col-xl-offset-0"><a href="index.html">Home</a>
+                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a href="index.html">Home</a>
                 </li>
                 <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a href="menu.html">See Our Menu</a>
 				</li>
@@ -47,7 +48,7 @@
                 </li>
                 <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a id="navcontact" href="index.html#contactus">Contact Us</a>
                 </li>
-                <li class="col-lg-1"><a id="cartli" href="cart.php"><img id="cartbutton" src="images/SVG/shopping111.svg" alt="Cart"></a>
+                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a href="cart.php">Cart</a>
                 </li>
             </ul>
         </div>
@@ -135,15 +136,15 @@
 <div class="col-lg-8 col-lg-offset-2 b_rad bg_2">
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
-		<div class="col-lg-8 col-lg-offset-2 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		<div class="col-lg-6 col-lg-offset-3 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 			<a id="ConfirmURL">
-				<button id="ConfirmButton" class="btn btn-warning btn-block"><br class="hidden-xs">Confirm Order<br class="hidden-xs"><br class="hidden-xs"></button>
+				<button id="ConfirmButton" style="font-size:18px;" class="btn btn-warning btn-block">Confirm Order</button>
 			</a>
 		</div>
 		<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
-		<div class="col-lg-8 col-lg-offset-2 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		<div class="col-lg-6 col-lg-offset-3 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 			<a id="ResetURL">
-				<button id="ResetButton" class="btn btn-danger btn-block"><br class="hidden-xs">Reset Order<br class="hidden-xs"><br class="hidden-xs"></button>
+				<button id="ResetButton" style="font-size:18px;" class="btn btn-danger btn-block">Reset Order</button>
 			</a>
 		</div>
 		<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
@@ -176,23 +177,25 @@
 	<br>
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
-		<div class="col-lg-8 col-lg-offset-2 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		<div class="col-lg-6 col-lg-offset-3 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 			<a id="ConfirmURL">
-				<button id="ConfirmButton2" class="btn btn-warning btn-block"><br class="hidden-xs">Confirm Order<br class="hidden-xs"><br class="hidden-xs"></button>
+				<button id="ConfirmButton2" style="font-size:18px;" class="btn btn-warning btn-block">Confirm Order</button>
 			</a>
 		</div>
 		<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
-		<div class="col-lg-8 col-lg-offset-2 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		<div class="col-lg-6 col-lg-offset-3 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 			<a id="ResetURL">
-				<button id="ResetButton2" class="btn btn-danger btn-block"><br class="hidden-xs">Reset Order<br class="hidden-xs"><br class="hidden-xs"></button>
+				<button id="ResetButton2" style="font-size:18px;" class="btn btn-danger btn-block">Reset Order</button>
 			</a>
 		</div>
+		<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
+	</div>
 		<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><br></div>
 	</div>
 </div>
 <div class="visible-lg">
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
 </section>
 <br><br><br>

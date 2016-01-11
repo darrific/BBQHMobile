@@ -65,6 +65,8 @@ $('#time').datetimepicker({
 });
 
 $('#consumerNo').mask('999-9999', {placeholder:"#"});
+$("#consumerName").mask('aaaaaaaaaaaaaaaaaaaaaaa');
+
 
 $('#placeOrderButton').on("click", function(){
 	var name = $('#consumerName').val();

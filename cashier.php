@@ -23,13 +23,15 @@
 		<ul class="nav nav-left nav-pills text-center">
 			<li class="active"><a data-toggle="pill" href="#home">Cashier Home</a></li>
 			<!-- <li><a data-toggle="pill" href="#order_history">Order History</a></li> -->
+			<li><a data-toggle="pill" href="#remove">Orders for Removal</a></li>
+			<li><a data-toggle="pill" href="#add_order">Add an Order</a></li>
 		</ul>
 	</nav>
 	<br><br><br><br><br>
 	<div class="tab-content">
 		<div id="home" class="tab-pane fade in active">
 			<div class="row">
-				<div class="col-lg-12 col-lg-offset- text-left">
+				<div class="col-lg-12 col-lg-offset-0 text-left">
 					<div class="row">
 						<div class="col-lg-11 col-lg-offset-1"><h1 class="padding_5">Orders</h1></div>
 					</div>
@@ -41,9 +43,64 @@
 		<div id="order_history" class="tab-pane fade">
 			history
 		</div>
+		<div id="remove" class="tab-pane fade">
+			<div class="row">
+				<div class="col-lg-12 col-lg-offset-0 text-left">
+					<div class="row">
+						<div class="col-lg-11 col-lg-offset-1"><h1 class="padding_5 r">Delayed Orders</h1></div>
+					</div>
+					<hr>
+				</div>
+			</div>
+			<div id="injectOverdueHere" class="row padding_20 bg_7 w">
+			</div>
+		</div>
+<!-- 	<div id="add_order" class="tab-pane fade">
+			<div class="row">
+				<div class="col-lg-12 col-lg-offset-0 text-left">
+					<div class="row">
+						<div class="col-lg-11 col-lg-offset-1"><h1 class="padding_5">Add an Order</h1></div>
+					</div>
+					<hr>
+				</div>
+
+			</div>
+			<div class="row text-center">
+				<div class="col-lg-10 col-lg-offset-1 b">
+					<h2>New Order</h2>
+					<br>
+					<div class="row">
+						<div class="col-lg-8 col-lg-offset-2">
+							<form>
+								<div class="form-group">
+									<label for="form_name_1">Name</label>
+									<input type="text" class="form-control">
+								</div>
+								<div class="form-group">
+									<label for="form_tel_1">Telephone</label>
+									<input type="tel" class="form-control">
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-xs-12 text-center b">
+											<h3 class="header_2">Pickup Time</h3>
+											<div class="row">
+												<div class="col-xs-8 col-xs-offset-2">
+													<div id="time"></div>
+												</div>
+											</div>
+										</div>
+										<br>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
 	</div>
 	<br><br><br><br><br>
-	
 </body>
 
 <footer>
