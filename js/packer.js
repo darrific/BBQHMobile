@@ -24,7 +24,7 @@ function registerButtons(){
 		var hammer = new Hammer(this, "");
 
 		hammer.on("tap", function(){
-			var w = window.open("http://10.0.0.3/print.php?id="+id+"&consumerName="+consumerName+"&number="+number+"&time="+time+"&name="+name);
+			var w = window.open("http://10.0.0.2/print.php?id="+id+"&consumerName="+consumerName+"&number="+number+"&time="+time+"&name="+name);
 			setTimeout(function(){
 	  			w.close();
 			}, 1000);

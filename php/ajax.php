@@ -28,12 +28,9 @@
 		case "getOrders":
 			getOrders();
 			break;
-<<<<<<< HEAD
 		case "deleteOrder":
 			deleteOrder();
 			break;
-=======
->>>>>>> f42b4484c2cd262597099cfc6fbd08ba04fba06f
 		case "checkReached":
 			checkReached();
 			break;
@@ -57,10 +54,7 @@
 	function clearSession(){
 		unset($_SESSION["OrderJSON"]);
 		unset($_SESSION["OrderPlaced"]);
-<<<<<<< HEAD
 		unset($_SESSION["id"]);
-=======
->>>>>>> f42b4484c2cd262597099cfc6fbd08ba04fba06f
 	}
 
 	function updateOrderJSON(){
@@ -71,19 +65,11 @@
 	function checkOverdue(){
 		$Query = 'SELECT * FROM orders WHERE status="Packed"';
 		if(!($result = $GLOBALS['db']->query($Query))){
-<<<<<<< HEAD
 		 //   echo "Error: Query failed to execute: \n";
 		 //   echo "Query: ". $Query."\n";
 		 //   echo "Errno: ". $GLOBALS['db']->errno."\n";
 		 //   echo "Error: ". $GLOBALS['db']->error."\n";
 		 	exit;
-=======
-			echo "Error: Query failed to execute: \n";
-		    echo "Query: ". $Query."\n";
-		    echo "Errno: ". $GLOBALS['db']->errno."\n";
-		    echo "Error: ". $GLOBALS['db']->error."\n";
-		    exit;
->>>>>>> f42b4484c2cd262597099cfc6fbd08ba04fba06f
 		}
 
 		while($order = $result->fetch_assoc()){
@@ -92,19 +78,11 @@
 				if(intval($order['pickup']) < time()){
 					$Query2 = "UPDATE orders SET status=\"Overdue\" WHERE orderID=$id";
 					if(!($r = $GLOBALS['db']->query($Query2))){
-<<<<<<< HEAD
 						// echo "Error: Query failed to execute: \n";
 					 //   echo "Query: ". $Query2."\n";
 					 //   echo "Errno: ". $GLOBALS['db']->errno."\n";
 					 //   echo "Error: ". $GLOBALS['db']->error."\n";
 						exit;
-=======
-						echo "Error: Query failed to execute: \n";
-					    echo "Query: ". $Query2."\n";
-					    echo "Errno: ". $GLOBALS['db']->errno."\n";
-					    echo "Error: ". $GLOBALS['db']->error."\n";
-					    exit;
->>>>>>> f42b4484c2cd262597099cfc6fbd08ba04fba06f
 					}
 				}
 			}
@@ -115,17 +93,10 @@
 		$combos = [];
 		$comboQuery = 'SELECT comboID,name,details,price,image FROM combos';
 		if(!($comboResult = $GLOBALS['db']->query($comboQuery))){
-<<<<<<< HEAD
 			// echo "Error: Query failed to execute: \n";
 		 //   echo "Query: ". $comboQuery."\n";
 		 //   echo "Errno: ". $GLOBALS['db']->errno."\n";
 		 //   echo "Error: ". $GLOBALS['db']->error."\n";
-=======
-			echo "Error: Query failed to execute: \n";
-		    echo "Query: ". $comboQuery."\n";
-		    echo "Errno: ". $GLOBALS['db']->errno."\n";
-		    echo "Error: ". $GLOBALS['db']->error."\n";
->>>>>>> f42b4484c2cd262597099cfc6fbd08ba04fba06f
 		    exit;
 		}
 		while($combo = $comboResult->fetch_assoc()){
@@ -149,17 +120,10 @@
 		$sides = [];
 		$sidesQuery = 'SELECT sideID,name,details,price FROM sides';
 		if(!($sidesResult = $GLOBALS['db']->query($sidesQuery))){
-<<<<<<< HEAD
 			// echo "Error: Query failed to execute: \n";
 		 //   echo "Query: ". $sidesQuery."\n";
 		 //   echo "Errno: ". $GLOBALS['db']->errno."\n";
 		 //   echo "Error: ". $GLOBALS['db']->error."\n";
-=======
-			echo "Error: Query failed to execute: \n";
-		    echo "Query: ". $sidesQuery."\n";
-		    echo "Errno: ". $GLOBALS['db']->errno."\n";
-		    echo "Error: ". $GLOBALS['db']->error."\n";
->>>>>>> f42b4484c2cd262597099cfc6fbd08ba04fba06f
 		    exit;
 		}
 		while($side = $sidesResult->fetch_assoc()){
@@ -206,17 +170,10 @@
 		}
 		$Query = "INSERT INTO orders (combos,sides,pickup,consumerName,phoneNumber) VALUES (\"$combos\",\"$sides\",$pickup,\"$consumerName\",\"$phoneNumber\");";
 		if(!($result = $GLOBALS['db']->query($Query))){
-<<<<<<< HEAD
 			// echo "Error: Query failed to execute: \n";
 		 //   echo "Query: ". $Query."\n";
 		 //   echo "Errno: ". $GLOBALS['db']->errno."\n";
 		 //   echo "Error: ". $GLOBALS['db']->error."\n";
-=======
-			echo "Error: Query failed to execute: \n";
-		    echo "Query: ". $Query."\n";
-		    echo "Errno: ". $GLOBALS['db']->errno."\n";
-		    echo "Error: ". $GLOBALS['db']->error."\n";
->>>>>>> f42b4484c2cd262597099cfc6fbd08ba04fba06f
 		    exit;
 		}
 		$_SESSION["OrderPlaced"] = 1;
@@ -226,17 +183,10 @@
 		$id = $_POST["id"];
 		$Query = "UPDATE orders SET status=\"$status\" WHERE orderID=$id";
 		if(!($result = $GLOBALS['db']->query($Query))){
-<<<<<<< HEAD
 			// echo "Error: Query failed to execute: \n";
 		 //   echo "Query: ". $Query."\n";
 		 //   echo "Errno: ". $GLOBALS['db']->errno."\n";
 		 //   echo "Error: ". $GLOBALS['db']->error."\n";
-=======
-			echo "Error: Query failed to execute: \n";
-		    echo "Query: ". $Query."\n";
-		    echo "Errno: ". $GLOBALS['db']->errno."\n";
-		    echo "Error: ". $GLOBALS['db']->error."\n";
->>>>>>> f42b4484c2cd262597099cfc6fbd08ba04fba06f
 		    exit;
 		}
 	}
@@ -245,38 +195,22 @@
 		$id = $_POST["id"];
 		$Query = "UPDATE orders SET reachedTablet=1 WHERE orderID=$id";
 		if(!($result = $GLOBALS['db']->query($Query))){
-<<<<<<< HEAD
 			// echo "Error: Query failed to execute: \n";
 		 //   echo "Query: ". $Query."\n";
 		 //   echo "Errno: ". $GLOBALS['db']->errno."\n";
 		 //   echo "Error: ". $GLOBALS['db']->error."\n";
-=======
-			echo "Error: Query failed to execute: \n";
-		    echo "Query: ". $Query."\n";
-		    echo "Errno: ". $GLOBALS['db']->errno."\n";
-		    echo "Error: ". $GLOBALS['db']->error."\n";
->>>>>>> f42b4484c2cd262597099cfc6fbd08ba04fba06f
 		    exit;
 		}
 	}
 
 	function updateBackendUI($status){
 		$orders = array();
-<<<<<<< HEAD
 		$Query = "SELECT * FROM orders WHERE status=\"$status\" ORDER BY pickup ASC";
 		if(!($result = $GLOBALS['db']->query($Query))){
 			// echo "Error: Query failed to execute: \n";
 		 //   echo "Query: ". $Query."\n";
 		 //   echo "Errno: ". $GLOBALS['db']->errno."\n";
 		 //   echo "Error: ". $GLOBALS['db']->error."\n";
-=======
-		$Query = "SELECT * FROM orders WHERE status=\"$status\"";
-		if(!($result = $GLOBALS['db']->query($Query))){
-			echo "Error: Query failed to execute: \n";
-		    echo "Query: ". $Query."\n";
-		    echo "Errno: ". $GLOBALS['db']->errno."\n";
-		    echo "Error: ". $GLOBALS['db']->error."\n";
->>>>>>> f42b4484c2cd262597099cfc6fbd08ba04fba06f
 		    exit;
 		}
 
@@ -334,17 +268,10 @@
 		}
 		$Query = "SELECT * FROM orders WHERE reachedTablet=1 AND status=\"Pending\"";
 		if(!($result = $GLOBALS['db']->query($Query))){
-<<<<<<< HEAD
 			// echo "Error: Query failed to execute: \n";
 		 //   echo "Query: ". $Query."\n";
 		 //   echo "Errno: ". $GLOBALS['db']->errno."\n";
 		 //   echo "Error: ". $GLOBALS['db']->error."\n";
-=======
-			echo "Error: Query failed to execute: \n";
-		    echo "Query: ". $Query."\n";
-		    echo "Errno: ". $GLOBALS['db']->errno."\n";
-		    echo "Error: ". $GLOBALS['db']->error."\n";
->>>>>>> f42b4484c2cd262597099cfc6fbd08ba04fba06f
 		    exit;
 		}
 		$O = json_decode($_SESSION["OrderJSON"]);
@@ -366,7 +293,6 @@
 		$ID = $_SESSION['id'];
 		$Query = "SELECT * FROM orders WHERE orderID=\"$ID\"";
 		if(!($result = $GLOBALS['db']->query($Query))){
-<<<<<<< HEAD
 			// echo "Error: Query failed to execute: \n";
 		 //   echo "Query: ". $Query."\n";
 		 //   echo "Errno: ". $GLOBALS['db']->errno."\n";
@@ -412,21 +338,5 @@
 			}
 		}
 		clearSession();
-=======
-			echo "Error: Query failed to execute: \n";
-		    echo "Query: ". $Query."\n";
-		    echo "Errno: ". $GLOBALS['db']->errno."\n";
-		    echo "Error: ". $GLOBALS['db']->error."\n";
-		    exit;
-		}
-		$obj = new stdObject();
-		while($order = $result->fetch_assoc()){
-			$obj->pickup = $order['pickup'];
-			$obj->consumerName = $order['consumerName'];
-			$obj->phoneNumber = $order['phoneNumber'];
-			$obj->id = $order['orderID'];
-		}
-		echo json_encode($obj);
->>>>>>> f42b4484c2cd262597099cfc6fbd08ba04fba06f
 	}
 ?>
