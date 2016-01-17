@@ -5,18 +5,14 @@
 <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 <link href="css/jquery-ui.min.css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/scroll.js"></script>
-<script type="text/javascript" src="js/parallaxscroll.js"></script>
 <script type="text/javascript" src="js/moment.js"></script>
 <script type="text/javascript" src="js/velocity.js"></script>
-<script type="text/javascript" src="js/hammer.min.js"></script>
 <script type="text/javascript" src="js/mustache.js"></script>
 
 <head>
-<script type="text/javascript" src="js/custom.js"></script>
 <script type="text/javascript" src="js/redirect.js"></script>
+<script type="text/javascript" src="js/footer.js"></script>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,8 +21,6 @@
 </head>
 
 <body>
-<div class="pageload hidden-xs"></div>
-
 <div id="navigationbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header"><a class="navbar-brand" href="index.html">Original Bar-B-Que Hut</a>
@@ -55,7 +49,7 @@
         </div>
     </div>
 </div>
-<section id="cart_background" data-speed="11" data-type="vbackground">
+<section id="cart_background">
 <br><br><br><br>
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12 center_text w heading">Checkout</div>
@@ -84,7 +78,7 @@
 	<br><br><br>
 	<div class="row" id="cart_table_list">
 		<div class="col-lg-10 col-lg-offset-1 col-xl-6 col-xl-offset-3 col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 text-center">
-			<div class="col-lg-1 col-xl-1 col-md-1 col-sm-1 col-xs-1">Qty</div>
+			<div class="col-lg-1 col-xl-1 col-md-1 col-sm-1 col-xs-2">Qty</div>
 			<div class="col-lg-5 col-lg-offset-1 col-xl-5 col-xl-offset-1 col-md-4 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-5 col-xs-offset-1">Item</div>
 			<div class="col-lg-3 col-lg-offset-0 col-xl-2 col-xl-offset-0 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-2 col-xs-offset-0">Price</div>
 			<hr>
@@ -93,6 +87,13 @@
 	<div class="row">
 		<div class="col-lg-10 col-lg-offset-1 col-xl-6 col-xl-offset-3 col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 text-center">
 			<div id="OrderTable"></div>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1 text_center cart_total"><b>
+			<div class="col-xs-6">TOTAL</div>
+			<div class="col-xs-6" id="totalPrice"><span id="totalPriceSpan">$0.00</span></div></b>
 		</div>
 	</div>
 	<br>
@@ -135,82 +136,16 @@
 	</div>
 	<br><br><br><br><br>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
+<br><div class="visible-lg"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br></div>
 </section>
 <br><br>
 <div class="row" id="footer">
-	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-xl-8 col-xl-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2 center_text">
-			<div class="col-lg-4 col-md-4 col-xl-4 col-xs-12 col-sm-12">
-				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-					<div class="footerheading"><b>Navigation</b></div>
-				</div>
-				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
-					<a href="index.html"><div class="footerlinks">Home</div></a>
-				</div>
-				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
-					<a href="menu.html"><div class="footerlinks">Our Menu</div></a>
-				</div>
-				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
-					<a href="order.php"><div class="footerlinks">Place Your Order</div></a>
-				</div>
-				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
-					<a href="index.html#aboutus"><div class="footerlinks">About Us</div></a>
-				</div>
-				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
-					<a href="family.html"><div class="footerlinks">Meet the Family</div></a>
-				</div>
-				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
-					<a href="index.html#contactus"><div class="footerlinks">Contact Us</div></a>
-				</div>
-				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
-					<a href="catering_form.html"><div class="footerlinks">Catering Services</div></a>
-				</div>
-				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
-					<a href="cart.php"><div class="footerlinks">Checkout</div></a>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-4 col-xl-4 col-xs-12 col-sm-12">
-				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-					<div class="visible-xs hidden-sm hidden-xl hidden-lg hidden-md"><br></div>
-					<div class="visible-sm hidden-xs hidden-xl hidden-lg hidden-md"><br></div>
-					<div class="footerheading"><b>Social Media</b></div>
-				</div>
-				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-4">
-					<a href="https://www.facebook.com/pages/Original-Bar-B-Que-Hut/201312543262192?fref=ts" target="_blank"><div class="footerlinks">Facebook</div></a>
-				</div>
-				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-4">
-					<a href="https://www.twitter.com/OriginalBBQHut" target="_blank"><div class="footerlinks">Twitter</div></a>
-				</div>
-				<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-4">
-					<a href="https://www.instagram.com/originalbarbquehut/" target="_blank"><div class="footerlinks">Instagram</div></a>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-4 col-xl-4 col-xs-12 col-sm-12">
-				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-xl-8 col-xl-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-					<div class="visible-xs hidden-sm hidden-xl hidden-lg hidden-md"><br></div>
-					<div class="visible-sm hidden-xs hidden-xl hidden-lg hidden-md"><br></div>
-					<div class="footerheading"><b>Powered By</b></div>
-				</div>
-				<a href="https://www.facebook.com/RootTechnologiesTT/">
-					<div class="col-lg-12 col-md-12 col-xl-12 col-xs-12 col-sm-12">
-						<div class="footerlinks">Root Technologies</div>
-					</div>
-					<br><br>
-					<div class="col-lg-8 col-lg-offset-2 col-md-12 col-xl-12 col-xs-12 col-sm-12">
-						<img id="rootimg" src="images/rtech.png" alt="">
-					</div>
-				</a>
-			</div>
-		</div>			
-	</div> 
-	<br><br>
 </div>	
 
 </body>	
 	
 	<footer>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
 		<script type="text/javascript" src="js/jquery.maskedinput.js"></script>

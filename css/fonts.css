@@ -122,6 +122,14 @@
 }
 
 @font-face {
+    font-family: 'brushscript';
+    src: url('../fonts/brushscript/brushscript.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
     font-family: 'furore';
     src: url('../fonts/furore/furore-webfont.eot');
     src: url('../fonts/furore/furore-webfont.eot?#iefix') format('embedded-opentype'),
@@ -323,7 +331,7 @@
 
 
 
-@fontfonts/ultimapd/-face {
+@font-face {
     font-fonts/ultimapd/family: 'ultimapdhairlineitalic';
     src: url('../fonts/ultimapd/ultimapdab-hairlineitalic-webfont.eot');
     src: url('../fonts/ultimapd/ultimapdab-hairlineitalic-webfont.eot?#iefix') format('embedded-opentype'),

@@ -1,12 +1,12 @@
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
 /*!
- * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=290150e6987ea4095baa)
- * Config saved to config.json and https://gist.github.com/290150e6987ea4095baa
+ * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=acaab6f971a71223b591)
+ * Config saved to config.json and https://gist.github.com/acaab6f971a71223b591
  */
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
@@ -402,7 +402,7 @@ fieldset[disabled] .btn-danger.active {
 .navbar-fixed-bottom {
   border-radius: 0;
 }
-@media (max-width: 1199px) {
+@media (max-width: 1359px) {
   .navbar .navbar-nav .open .dropdown-menu > .active > a,
   .navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar .navbar-nav .open .dropdown-menu > .active > a:focus {

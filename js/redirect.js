@@ -1,6 +1,13 @@
 redirect();
 
 function redirect(){
+	if(window.navigator.userAgent.match(/Tablet PC/i)){
+		$('body').css('display','none');
+		alert('STOP USING INTERNET EXPLORER BITCH! CHROME IS BETTER!');
+	} else {
+		/*alert('False - Tablet - ' + navigator.userAgent);*/
+	}
+
 	if(window.navigator.userAgent.match(/Mobile/i)
 	|| window.navigator.userAgent.match(/iPhone/i)
 	|| window.navigator.userAgent.match(/iPod/i)
@@ -22,7 +29,7 @@ function redirect(){
 	|| window.navigator.userAgent.match(/Nexus 10/i)
 	|| window.navigator.userAgent.match(/KFAPWI/i))
 	{
-		/*alert('True - Tablet - ' + navigator.userAgent);*/
+		alert('True - Tablet - ' + navigator.userAgent);
 		window.location.href="http://m.originalbbqhut.com";
 	} else {
 		/*alert('False - Tablet - ' + navigator.userAgent);*/

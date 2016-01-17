@@ -51,6 +51,9 @@
   width: 100%;
   position: relative; }
 
+.cart_total {
+  font-size: 17px; }
+
 .ordername {
   color: #BCBCBC; }
 
@@ -125,20 +128,12 @@
   cursor: pointer;
   z-index: 102; }
 
-#menu_background {
-  background: url(../images/small/pit4.png) 50% 0 fixed;
-  height: auto;
-  margin: 0 auto;
-  width: 100%;
-  position: relative;
-  background-size: 100%; }
-
 #menuflowery {
   font-family: opensansregular;
   font-size: 17px; }
 
 #allitems img {
-  cursor: pointer; }
+  cursor: zoom-in; }
 
 .menuitem {
   font-family: opensansregular;
@@ -162,16 +157,17 @@
   overflow-x: hidden; }
 
 body {
-  background: url(../images/texture3.png); }
+  background: url(../images/c.jpg);
+  background-size: 100% 100%; }
 
 .bg_1 {
   background-color: #000; }
 
 .bg_2 {
-  background: url(../images/texture3.png); }
+  background-color: #6A3F2C; }
 
 .bg_3 {
-  background-color: #444; }
+  background-color: #fff; }
 
 .bg_4 {
   background-color: #642922;
@@ -186,7 +182,7 @@ body {
   color: white; }
 
 .bg_7 {
-  background-color: #555;
+  background-color: #6A3F2C;
   color: white; }
 
 .bg_8 {
@@ -224,11 +220,22 @@ body {
 .padding_1 {
   padding: 1px; }
 
+.o9 {
+  opacity: 0.9; }
+
 .w {
-  color: white; }
+  color: #CECECE; }
 
 .b {
   color: black; }
+
+.hr_b {
+  background-color: black;
+  border-color: black; }
+
+.hr_w {
+  background-color: #CECECE;
+  border-color: #CECECE; }
 
 .r {
   color: red; }
@@ -249,7 +256,8 @@ body {
 
 .heading {
   font-size: 53px;
-  font-family: caviardreamsregular; }
+  font-family: caviardreamsregular;
+  text-align: center; }
 
 .heading2 {
   font-family: ultimapdultralight;
@@ -260,25 +268,19 @@ body {
   display: block;
   visibility: hidden;
   position: relative;
-  top: -70px; }
+  top: -60px; }
 
-.darkbrown {
-  background-color: #421c17; }
+.tuttext {
+  font-size: 15px; }
+
+.tutnum {
+  font-size: 20px; }
+
+.hide {
+  display: none; }
 
 .btn_font {
   font-size: 18px; }
-
-.pageload {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  background: url(../images/Animations/bbqhutanimation.gif) 50% 50% no-repeat #eee; }
-
-.navindex {
-  display: none; }
 
 #navigationbar.navbar-default .navbar-brand {
   color: #e3e3e3; }
@@ -316,7 +318,13 @@ body {
 
 #index {
   background: url("../images/small/pit.jpg");
-  background-size: 100%; }
+  background-size: 100% 100%; }
+
+#slogan {
+  font-size: 140px;
+  font-family: brushscript;
+  color: white;
+  text-align: center; }
 
 #halalimg img {
   width: 90px; }
@@ -337,12 +345,49 @@ body {
   color: #b3b3b3;
   text-align: center; }
 
-#aus {
-  background: url(../images/small/untitled-444-2.jpg) 50% 0 fixed;
-  height: auto;
-  margin: 0 auto;
-  width: 100%;
-  position: relative; }
+.about_covers {
+  width: 100%; }
+
+#reviews {
+  background: url(../images/small/untitled-510.jpg); }
+
+.rev_but {
+  background-color: #EA9030;
+  color: white;
+  font-size: 20px;
+  padding: 5px; }
+
+#readstory {
+  text-decoration: underline;
+  color: #CECECE;
+  cursor: pointer; }
+
+#morestory {
+  position: absolute;
+  display: none;
+  top: 25%;
+  background-color: #642922;
+  z-index: 20;
+  color: #CECECE;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px; }
+
+#storytext {
+  height: 300px; }
+
+#closestory {
+  position: absolute;
+  margin-top: -21px;
+  right: 0%;
+  color: white;
+  background-color: #242424;
+  padding-top: 2px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  z-index: 102; }
 
 #sectext {
   font-family: opensansregular;
@@ -353,14 +398,6 @@ body {
 
 #crewmeet img {
   border-radius: 1000px; }
-
-.sec3img {
-  height: 120px; }
-
-.con_button {
-  padding: 5px;
-  font-family: opensansregular;
-  font-size: 15px; }
 
 .contact_button {
   padding: 10px;
@@ -396,7 +433,7 @@ body {
   text-align: center;
   font-family: opensansregular;
   font-size: 15px;
-  color: #000000; }
+  color: #CECECE; }
 
 #rootimg {
   width: 100px; }
