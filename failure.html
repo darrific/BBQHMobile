@@ -10,7 +10,6 @@
 
 <head>
 <script type="text/javascript" src="js/redirect.js"></script>
-<script type="text/javascript" src="js/footer.js"></script>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,37 +48,40 @@
 </div>
 
 <br><br><br><br>
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 hidden-xs center_text w heading0">Order Failed</div>
+	<div class="col-xs-12 visible-xs center_text w heading2">Order Failed</div>
+	<hr class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3 hr_w">
+</div>
 
-<div class="row" id="gt_image">
-	<div class="col-xs-12 text-center">
-		<img src="images/animations/post_order/fail.svg" alt="Order Failed">
-	</div>
+<div class="row">
+	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-xl-10 col-xl-offset-1 text-center w"><h3>ERROR</h3></div>
 </div>
 <div class="row">
-	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-xl-10 col-xl-offset-1 text-center"><h3>ERROR</h3></div>
-</div>
-<div class="row">
-	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-xl-10 col-xl-offset-1 text-center">
+	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-xl-10 col-xl-offset-1 text-center w">
 		<h4>For some reason, your order was not posted.</h4>
 	</div>
 </div>
 <div class="row">
-	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-xl-10 col-xl-offset-1 text-center">
+	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-xl-10 col-xl-offset-1 text-center w">
 		<b><i>Please retry in 30 seconds.</i></b>
 	</div>
 </div>	
 <br>
 <div class="row">
-	<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 col-xl-6 col-xl-offset-3">
-		<a href="cart.php">
-			<button type="button" class="btn btn-warning btn-block text-center">
-				Edit Order
-			</button>
-		</a>
-		<br>
-		<button type="button" class="btn btn-success btn-block text-center">
-			Place Order
-		</button>
+	<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12 col-xs-offset-0">
+		<div class="col-xs-6 col-xs-offset-0 col-sm-6 col-sm-offset-0 col-md-6 col-md-offset-0 col-lg-6 col-lg-offset-0 col-xl-6 col-xl-offset-0">
+			<a href="cart.php">
+				<div class="button">
+					Edit Order
+				</div>
+			</a>
+		</div>
+		<div class="col-xs-6 col-xs-offset-0 col-sm-6 col-sm-offset-0 col-md-6 col-md-offset-0 col-lg-6 col-lg-offset-0 col-xl-6 col-xl-offset-0">
+			<div class="button">
+				Place Order
+			</div>
+		</div>
 	</div>
 </div>
 <div class="visble-lg"><br><br><br><br><br><br><br><br></div>
@@ -89,6 +91,7 @@
 
 <footer>
 	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/footer.js"></script>
 	<script>
 		$.post('php/ajax.php', {action: 'deleteOrder'}, function(data, textStatus, xhr) {});
 	</script>

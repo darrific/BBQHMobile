@@ -10,7 +10,6 @@
 
 <head>
 <script type="text/javascript" src="js/redirect.js"></script>
-<script type="text/javascript" src="js/footer.js"></script>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,85 +18,77 @@
 </head>
 
 <body>
-<div id="navigationbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header"><a class="navbar-brand" href="index.html">Original Bar-B-Que Hut</a>
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder">
-            	<span class="sr-only">Toggle navigation</span>
-            	<span class="icon-bar"></span>
-            	<span class="icon-bar"></span>
-            	<span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse navbar-menubuilder">
-            <ul class="nav navbar-nav navbar-center col-lg-10 col-xl-10">
-                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a href="index.html">Home</a>
-                </li>
-                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a href="menu.html">See Our Menu</a>
-				</li>
-                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a href="order.php">Place An Order</a>
-                </li>
-                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a id="navabout" href="index.html#aboutus">About Us</a>
-                </li>
-                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a id="navcontact" href="index.html#contactus">Contact Us</a>
-                </li>
-                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a href="cart.php">Cart</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
+<nav class="navbars navbar navbar-inverse navbar-fixed-top" id="navbar_color">
+	<br>
+	<a href="index.html" id="nav_brand" class="navbar-brand padding_30">Original Bar-B-Que Hut</a>
+	<button id="navbar_menu_button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	</button>
+	<div class="collapse navbar-collapse navHeaderCollapse">
+		<ul class="nav navbar-nav navbar-right text-center" id="navbar_inner">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="index.html#about_header">About</a></li>
+			<li><a href="menu.html">Menu</a></li>
+			<li><a class="r" href="order.php">Place an Order</a></li>
+			<li><a href="index.html#contact_container">Contact</a></li>
+			<li><a href="catering_form.html">Catering Quote</a></li>
+			
+		</ul>
+	</div> 
+</nav>
 <br><br><br><br>
 <div class="row">
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12 center_text heading">Catering Services</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12 center_text heading w">Catering Services</div>
+	<hr class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3 hr_w">
 </div>
 <br>
 <div class="row">
-	<div id="cateringflowery" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 col-xl-8 col-xl-offset-2 center_text">
+	<div id="cateringflowery" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 col-xl-8 col-xl-offset-2 center_text w">
 		<i>Besides offering normal fast food ordering, we also provide catering services, so now you can enjoy the signature taste of BBQ Hut’s delicious food at your special event. To order, please fill out the fields below to receive a letter of quote from one of our catering representatives via email. If you would like to receive a quote over the phone, please call (868) 657-9429. We look forward to serving you.</i>
 	</div>
 </div>
 <br>
 <br>
 <br>
-<br>
 <div class="row">
-	<div class="col-xs-12 bg_5">
+	<div class="col-lg-8 col-lg-offset-2 col-md-12 col-sm-12 col-xs-12">
 		<br>
 		<form action="#" class="form-horizontal">
 			<div class="form-group">
-				<div class="col-lg-4 col-lg-offset-4 col-xl-4 col-xl-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-					<input type="text" class="form-control" id="inputName3" placeholder="Name"> 
+				<div class="col-lg-6 col-lg-offset-3 col-xl-4 col-xl-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+					<input type="text" class="form-control center_text" id="inputName3" placeholder="Name"> 
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-lg-4 col-lg-offset-4 col-xl-4 col-xl-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-					<input type="email" class="form-control" id="inputEmail3" placeholder="Email"> 
+				<div class="col-lg-6 col-lg-offset-3 col-xl-4 col-xl-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+					<input type="email" class="form-control center_text" id="inputEmail3" placeholder="Email"> 
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-lg-4 col-lg-offset-4 col-xl-4 col-xl-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-					<input type="tel" class="form-control" id="inputTel3" placeholder="Telephone Number"> 
+				<div class="col-lg-6 col-lg-offset-3 col-xl-4 col-xl-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+					<input type="tel" class="form-control center_text" id="inputTel3" placeholder="Telephone Number"> 
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-lg-4 col-lg-offset-4 col-xl-4 col-xl-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-					<input type="number" class="form-control" id="inputNumber3" placeholder="Number Of Persons"> 
+				<div class="col-lg-6 col-lg-offset-3 col-xl-4 col-xl-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+					<input type="number" class="form-control center_text" id="inputNumber3" placeholder="Number Of Persons"> 
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-lg-4 col-lg-offset-4 col-xl-4 col-xl-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-					<input type="date" class="form-control" id="inputDate3" placeholder="Date of Event"> 
+				<div class="col-lg-6 col-lg-offset-3 col-xl-4 col-xl-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+					<input type="date" class="form-control center_text" id="inputDate3" placeholder="Date of Event"> 
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-lg-4 col-lg-offset-4 col-xl-4 col-xl-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-					<input type="text" rows="2" class="form-control" placeholder="Special Requests/Notes">
+				<div class="col-lg-6 col-lg-offset-3 col-xl-4 col-xl-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+					<input type="text" rows="2" class="form-control center_text" placeholder="Special Requests/Notes">
 				</div>
 			</div>
 			<div class="form-group">
-			    <div class="col-lg-2 col-lg-offset-5 col-xl-4 col-xl-offset-4 col-md-2 col-md-offset-5 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3">
-			      <button type="#" class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12 btn btn-warning">Send Request</button>
+			    <div class="col-lg-6 col-lg-offset-3 col-xl-4 col-xl-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+			      <button type="#" class="col-lg-4 col-lg-offset-4 col-xl-4 col-xl-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-12 col-xs-offset-4 btn btn-warning">Send Request</button>
 			    </div>
 			 </div>
 		</form>
@@ -105,11 +96,13 @@
 </div>
 <br><br>
 <div class="row" id="footer">
-</div>	
+</div>
+
 </body>
 
 <footer>
 	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/footer.js"></script>
 	<script>
 		$(document).ready(function(){
 

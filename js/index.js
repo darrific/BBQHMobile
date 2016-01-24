@@ -16,12 +16,12 @@ google_map.on('mouseleave', disablemap);
 function enablemap(){
 	$map_overlay.fadeOut(1);
 	$click_map_instruct.fadeOut(500);
-};
+}
 
 function disablemap(){								
 	$map_overlay.fadeIn(1);
 	$click_map_instruct.fadeIn(500);
-};
+}
 
 $("#readstory").click(function(){
     var scrollPos = $(window).scrollTop();
@@ -36,3 +36,10 @@ $(window).scroll(function(){
 $('#morestory').click(function(){
 	$('#morestory').fadeOut(200);
 });
+
+function smoothanchor(event){
+var target = $($(this).attr('href'));
+if(target.length){
+	event.preventDefault();
+	$('body').animate({scrollTop: (target.offset().top)}, 1000);}
+}

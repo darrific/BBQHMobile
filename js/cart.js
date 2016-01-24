@@ -1,5 +1,5 @@
 var order = {};
-var template = '{{#OrderItems}}<div class="row" id="TableItem"><div class="col-lg-1 col-xl-1 col-md-1 col-sm-1 col-xs-1">{{quantity}}</div><div class="col-lg-5 col-lg-offset-1 col-xl-5 col-xl-offset-1 col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-5 col-xs-offset-1"><b>{{name}}</b></div><div class="col-lg-3 col-lg-offset-0 col-xl-2 col-xl-offset-0 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-0 col-xs-2 col-xs-offset-0">${{price}}</div><div class="col-xs-2 col-xs-offset-0"><span id="removeButton" class="rembut">X</div><br></div><br>{{/OrderItems}}';
+var template = '{{#OrderItems}}<div class="row bg_4" id="TableItem"><div class="col-lg-1 col-lg-offset-1 col-xl-1 col-xl-offset-1 col-md-1 col-md-offset-1 col-sm-1 col-sm-offset-1 col-xs-1 col-xs-offset-1">{{quantity}}</div><div class="col-lg-5 col-lg-offset-1 col-xl-5 col-xl-offset-1 col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-5 col-xs-offset-0"><b>{{name}}</b></div><div class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0 col-md-2 col-md-offset-2 col-sm-2 col-sm-offset-0 col-xs-2 col-xs-offset-0">${{price}}</div><div class="col-xs-2 col-xs-offset-0"><span id="removeButton" class="rembut">X</div><br></div><br>{{/OrderItems}}';
 var now = moment();
 
 now.add(30, "m");
@@ -75,7 +75,21 @@ $('#placeOrderButton').on("click", function(){
 		order.consumerName = name;
 		order.phoneNumber = number;
 		// alert(JSON.stringify(order));
-		$.post('php/ajax.php', {'OrderJSON': JSON.stringify(order), 'action': 'sendOrder'}, function(data, textStatus, xhr) {
+		$.post('php/ajax.php', {'OrderJSON': JSON.stringify(order), 'action': 'sendOrder', 'timePlaced':moment().unix()}, function(data, textStatus, xhr) {
+			if(data == "empty"){
+				alert('You do not have an order placed!');
+				return;
+			}
+			if(data == "spam"){
+				alert('You already placed an order!');
+				window.location.href = "failure.html";
+				return;
+			}
+			if(data == "early"){
+				alert('You cannot set an order to be picked up before the current time!');
+				window.location.href = "failure.html";
+				return;
+			}
 			window.location.href = "loading.html";
 		});
 	}else{

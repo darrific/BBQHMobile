@@ -10,7 +10,6 @@
 
 <head>
 <script type="text/javascript" src="js/redirect.js"></script>
-<script type="text/javascript" src="js/footer.js"></script>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,41 +27,31 @@
 		<img src="" alt="Food Image" id="displayimg">
 	</div>
 </div>
-
-<div id="navigationbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header"><a class="navbar-brand" href="index.html">Original Bar-B-Que Hut</a>
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder">
-            	<span class="sr-only">Toggle navigation</span>
-            	<span class="icon-bar"></span>
-            	<span class="icon-bar"></span>
-            	<span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse navbar-menubuilder">
-            <ul class="nav navbar-nav navbar-center col-lg-10 col-xl-10">
-                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a href="index.html">Home</a>
-                </li>
-                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a style="color: rgba(227, 227, 227, 1); border-left:solid 1px #52AE3D; border-right:solid 1px #52AE3D;" href="menu.html">See Our Menu</a>
-				</li>
-                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a href="order.php">Place An Order</a>
-                </li>
-                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a id="navabout" href="index.html#aboutus">About Us</a>
-                </li>
-                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a id="navcontact" href="index.html#contactus">Contact Us</a>
-                </li>
-                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a href="cart.php">Cart</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-
+<nav class="navbars navbar navbar-inverse navbar-fixed-top" id="navbar_color">
+	<br>
+	<a href="index.html" id="nav_brand" class="navbar-brand padding_30">Original Bar-B-Que Hut</a>
+	<button id="navbar_menu_button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	</button>
+	<div class="collapse navbar-collapse navHeaderCollapse">
+		<ul class="nav navbar-nav navbar-right text-center" id="navbar_inner">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="index.html#about_header">About</a></li>
+			<li><a href="menu.html">Menu</a></li>
+			<li><a class="r" href="order.php">Place an Order</a></li>
+			<li><a href="index.html#contact_container">Contact</a></li>
+			<li><a href="catering_form.html">Catering Quote</a></li>
+			
+		</ul>
+	</div> 
+</nav>
 <section id="menu_background">
-	<br><br><br><br>
+	<br><br><br><br><br><br>
 	<div class="row">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12 center_text w heading">Our Menu</div>
+		<hr class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3 hr_w">
 	</div>
 	<br>
 	<br>
@@ -76,16 +65,15 @@
 	<br>
 	<br>
 	<br>
-
-	<div id="allitems" class="container bg_2 b_rad o9">
-		<br><br>
-		<div class="row">
-			<div class="col-lg-6 col-lg-offset-3 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-				<a href="order.php"><button style="font-size:18px;" class="btn btn-warning btn-block">Order Now</button></a>	
-			</div>
-			<br>
+	<div class="row">
+		<div class="col-lg-2 col-lg-offset-5 col-xl-8 col-xl-offset-2 col-md-2 col-md-offset-5 col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1">
+			<a href="order.php"><div style="font-size:18px;" class="button">Order Now</div></a>	
 		</div>
 		<br>
+	</div>
+	<br>
+	<div id="allitems" class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0 bg_4 o9">
+		<br><br><br>
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="col-xs-11 col-xs-offset-1 heading2 w"><b>Main Courses</b></div>
@@ -93,9 +81,9 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t11.jpg" style="width:80px; border-radius:80px" alt="1/4 Chicken"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t11.jpg" style="width:80px; border-radius:80px" alt="1/4 Chicken"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">1/4 Chicken</b>
 					<br>
@@ -106,9 +94,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t10.jpg" style="width:80px; border-radius:80px" alt="1/2 Chicken"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t10.jpg" style="width:80px; border-radius:80px" alt="1/2 Chicken"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">1/2 Chicken</b>
 					<br>
@@ -119,9 +107,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t9.jpg" style="width:80px; border-radius:80px" alt="Beef Steak"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t9.jpg" style="width:80px; border-radius:80px" alt="Beef Steak"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Beef Steak</b>
 					<br>
@@ -132,9 +120,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t6.jpg" style="width:80px; border-radius:80px" alt="Lamb Chops"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t6.jpg" style="width:80px; border-radius:80px" alt="Lamb Chops"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Lamb Chops</b>
 					<br>
@@ -145,9 +133,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t5.jpg" style="width:80px; border-radius:80px" alt="Fish"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t5.jpg" style="width:80px; border-radius:80px" alt="Fish"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Fish</b>
 					<br>
@@ -158,9 +146,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t3.jpg" style="width:80px; border-radius:80px" alt="Shrimp"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t3.jpg" style="width:80px; border-radius:80px" alt="Shrimp"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Shrimp</b>
 					<br>
@@ -171,9 +159,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t2.jpg" style="width:80px; border-radius:80px" alt="Vegetarian"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t2.jpg" style="width:80px; border-radius:80px" alt="Vegetarian"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Vegetarian</b>
 					<br>
@@ -184,9 +172,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t1.jpg" style="width:80px; border-radius:80px" alt="Vegetarian Wedges"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t1.jpg" style="width:80px; border-radius:80px" alt="Vegetarian Wedges"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Vegetarian (Wedges)</b>
 					<br>
@@ -205,9 +193,9 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t7.jpg" style="width:80px; border-radius:80px" alt="Lamb & Chicken"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t7.jpg" style="width:80px; border-radius:80px" alt="Lamb & Chicken"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Lamb & Chicken</b>
 					<br>
@@ -218,9 +206,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t6.jpg" style="width:80px; border-radius:80px" alt="Lamb & Beef Steak"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t6.jpg" style="width:80px; border-radius:80px" alt="Lamb & Beef Steak"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Lamb & Beef Steak</b>
 					<br>
@@ -231,9 +219,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t7.jpg" style="width:80px; border-radius:80px" alt="Beef Steak & Chicken"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t7.jpg" style="width:80px; border-radius:80px" alt="Beef Steak & Chicken"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Beef Steak & Chicken</b>
 					<br>
@@ -244,9 +232,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t4.jpg" style="width:80px; border-radius:80px" alt="Fish & Shrimp"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t4.jpg" style="width:80px; border-radius:80px" alt="Fish & Shrimp"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Fish & Shrimp</b>
 					<br>
@@ -257,9 +245,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t3.jpg" style="width:80px; border-radius:80px" alt="Shrimp & any meat"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t3.jpg" style="width:80px; border-radius:80px" alt="Shrimp & any meat"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Shrimp & any one meat</b>
 					<br>
@@ -276,9 +264,9 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t18.jpg" style="width:80px; border-radius:80px" alt="Fries"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t18.jpg" style="width:80px; border-radius:80px" alt="Fries"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Fries</b>
 					<br>
@@ -289,9 +277,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t28.jpg" style="width:80px; border-radius:80px" alt="Garlic Bread"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t28.jpg" style="width:80px; border-radius:80px" alt="Garlic Bread"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Garlic Bread</b>
 					<br>
@@ -302,9 +290,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t19.jpg" style="width:80px; border-radius:80px" alt="Baked Potato"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t19.jpg" style="width:80px; border-radius:80px" alt="Baked Potato"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Baked Potato</b>
 					<br>
@@ -315,9 +303,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t25.jpg" style="width:80px; border-radius:80px" alt="Macaroni Pie"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t25.jpg" style="width:80px; border-radius:80px" alt="Macaroni Pie"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Macaroni Pie</b>
 					<br>
@@ -328,9 +316,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t24.jpg" style="width:80px; border-radius:80px" alt="Macaroni Salad"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t24.jpg" style="width:80px; border-radius:80px" alt="Macaroni Salad"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Macaroni Salad</b>
 					<br>
@@ -341,9 +329,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t23.jpg" style="width:80px; border-radius:80px" alt="Potato Salad"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t23.jpg" style="width:80px; border-radius:80px" alt="Potato Salad"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Potato Salad</b>
 					<br>
@@ -354,9 +342,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t22.jpg" style="width:80px; border-radius:80px" alt="Cole Slaw"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t22.jpg" style="width:80px; border-radius:80px" alt="Cole Slaw"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Cole Slaw</b>
 					<br>
@@ -367,9 +355,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/bbq5.jpg" style="width:80px; border-radius:80px" alt="Green Salad"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/bbq5.jpg" style="width:80px; border-radius:80px" alt="Green Salad"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Extra Portion Green Salad</b>
 					<br>
@@ -380,9 +368,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t21.jpg" style="width:80px; border-radius:80px" alt="Wedges"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t21.jpg" style="width:80px; border-radius:80px" alt="Wedges"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Wedges</b>
 					<br>
@@ -393,9 +381,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t27.jpg" style="width:80px; border-radius:80px" alt="Fried Rice"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t27.jpg" style="width:80px; border-radius:80px" alt="Fried Rice"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Fried Rice</b>
 					<br>
@@ -406,9 +394,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t26.jpg" style="width:80px; border-radius:80px" alt="Noodles"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t26.jpg" style="width:80px; border-radius:80px" alt="Noodles"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Noodles</b>
 					<br>
@@ -419,9 +407,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t12.jpg" style="width:80px; border-radius:80px" alt="Chicken Kebabs"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t12.jpg" style="width:80px; border-radius:80px" alt="Chicken Kebabs"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Chicken Kebabs</b>
 					<br>
@@ -432,9 +420,9 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 bg_5">
-				<div class="col-lg-2 col-xs-4"><br><img src="images/Food/t13.jpg" style="width:80px; border-radius:80px" alt="Shrimp Kebabs"><br><br></div>
-				<div class="col-lg-8 col-xs-6">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 bg_2">
+				<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4"><br><img src="images/Food/t13.jpg" style="width:80px; border-radius:80px" alt="Shrimp Kebabs"><br><br></div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6">
 					<br>
 					<b class="menuitem_title">Shrimp Kebabs</b>
 					<br>
@@ -443,16 +431,14 @@
 				<div class="col-lg-1 col-lg-offset-1 col-xs-2 menuitem_price"><br>$30</div>
 			</div>
 		</div>
-		<br>
-		<div class="row">
-			<div class="col-lg-6 col-lg-offset-3 col-xl-8 col-xl-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-				<a href="order.php"><button style="font-size:18px;" class="btn btn-warning btn-block">Order Now</button></a>	
-			</div>
-			<br>
-		</div>
-		<br>
+		<br><br><br><br>
 	</div>
 	<br>
+	<div class="col-lg-2 col-lg-offset-5 col-xl-8 col-xl-offset-2 col-md-2 col-md-offset-5 col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1">
+		<br>
+		<a href="order.php"><div style="font-size:18px;" class="button">Order Now</div></a>	
+	</div>
+	<br><br><br>
 </section>
 <br><br>
 <div class="row" id="footer">
@@ -462,6 +448,7 @@
 <footer>
 	<script src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/menu.js"></script>
+	<script type="text/javascript" src="js/footer.js"></script>
 </footer>
 
 </html>

@@ -13,6 +13,9 @@
 		case "clearOrderJSON":
 			clearSession();
 			break;
+		case "clearSession":
+			clearSession();
+			break;
 		case "updateOrderStatus":
 			updateOrderStatus($_POST["status"]);
 			break;
@@ -52,9 +55,21 @@
 	}
 
 	function clearSession(){
-		unset($_SESSION["OrderJSON"]);
-		unset($_SESSION["OrderPlaced"]);
-		unset($_SESSION["id"]);
+		if(isset($_SESSION['OrderJSON'])){
+			unset($_SESSION["OrderJSON"]);
+		}
+		if(isset($_SESSION['OrderPlaced'])){
+			unset($_SESSION["OrderPlaced"]);
+		}
+		if(isset($_SESSION['id'])){
+			unset($_SESSION["id"]);
+		}
+		if(isset($_SESSION['Cashier'])){
+			unset($_SESSION["Cashier"]);
+		}
+		if(isset($_SESSION['Packer'])){
+			unset($_SESSION["Packer"]);
+		}
 	}
 
 	function updateOrderJSON(){
@@ -118,7 +133,7 @@
 
 	function getSides(){
 		$sides = [];
-		$sidesQuery = 'SELECT sideID,name,details,price FROM sides';
+		$sidesQuery = 'SELECT sideID,name,details,price,image FROM sides';
 		if(!($sidesResult = $GLOBALS['db']->query($sidesQuery))){
 			// echo "Error: Query failed to execute: \n";
 		 //   echo "Query: ". $sidesQuery."\n";
@@ -146,18 +161,38 @@
 	function sendOrder(){
 		updateOrderJSON();
 		$order = json_decode($_SESSION['OrderJSON']);
-
+		$time = $_POST['timePlaced'];
+		$ip = $_SERVER['REMOTE_ADDR'];
+		
 		if($order->items == array()){
+			echo 'empty';
 			clearSession();
 			return;
 		}
-
+		if($order->pickup < time()){
+			echo 'early';
+			clearSession();
+			return;
+		}
+		
+		$preQuery = "SELECT * FROM orders WHERE status=\"PENDING\" OR status=\"PACKED\"";
+		$preresult = $GLOBALS['db']->query($preQuery);
+		while($o = $preresult->fetch_assoc()){
+			if(strcmp($o["ip"], $ip) == 0){
+				if(time() < $o['pickup']){ //comparing server time. More secure but users would be pissed if the time on their machine is wrong
+				//if($time < $o['pickup']){ //comparing client time. Always a great user experience but opens spamming to hacker.
+					echo 'spam';
+					clearSession();
+					return;
+				}
+			}
+		}
+		
 		$pickup = $order->pickup;
 		$consumerName = $order->consumerName;
 		$phoneNumber = $order->phoneNumber;
 		$combos = "";
 		$sides = "";
-
 		$phoneNumber = intval(str_replace("-", "", $phoneNumber));
 
 		foreach ($order->items as $item){
@@ -168,7 +203,7 @@
 				$sides .= $item->ID."-".$item->quantity."|";
 			}
 		}
-		$Query = "INSERT INTO orders (combos,sides,pickup,consumerName,phoneNumber) VALUES (\"$combos\",\"$sides\",$pickup,\"$consumerName\",\"$phoneNumber\");";
+		$Query = "INSERT INTO orders (combos,sides,pickup,consumerName,phoneNumber,ip) VALUES (\"$combos\",\"$sides\",$pickup,\"$consumerName\",\"$phoneNumber\",\"$ip\");";
 		if(!($result = $GLOBALS['db']->query($Query))){
 			// echo "Error: Query failed to execute: \n";
 		 //   echo "Query: ". $Query."\n";
@@ -305,6 +340,36 @@
 			$obj->consumerName = $order['consumerName'];
 			$obj->phoneNumber = $order['phoneNumber'];
 			$obj->id = $order['orderID'];
+			$obj->total = 0;
+			foreach(explode("|", $order['sides']) as $strSide){
+				$numbers = explode("-", $strSide);
+				$id = $numbers[0];
+				if(count($numbers) > 1){
+					if($numbers[1] > 0){
+						$priceResult = $GLOBALS['db']->query("SELECT price FROM combos WHERE comboID = \"$id\"");
+						if(isset($priceResult)){
+							$price = intval($priceResult->fetch_assoc()['price']);
+							$quantity = intval($numbers[1]);
+							$obj->total += ($price * $quantity);
+						}
+					}
+				}
+			}
+			foreach(explode("|", $order['combos']) as $strCombo){
+				$itemObj = new stdObject();
+				$numbers = explode("-", $strCombo);
+				$id = $numbers[0];
+				if(count($numbers) > 1){
+					if($numbers[1] > 0){
+						$priceResult = $GLOBALS['db']->query("SELECT price FROM sides WHERE sideID = \"$id\"");
+						if(isset($priceResult)){
+							$price = intval($priceResult->fetch_assoc()['price']);
+							$quantity = intval($numbers[1]);
+							$obj->total += ($price * $quantity);
+						}
+					}
+				}
+			}
 		}
 		echo json_encode($obj);
 		clearSession();
