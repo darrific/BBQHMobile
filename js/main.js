@@ -8,7 +8,7 @@ var original = 0;
 var ten = 0;
 
 (function(){
-	$(body).css('display','none');
+	$('body').css('display','none');
 })()
 
 function cache(){

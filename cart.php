@@ -16,6 +16,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="css/bootstrap.min.css" rel="stylesheet">
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <title>Checkout - Original Bar-B-Que Hut - The Best Bar-B-Que Around</title>
 </head>
 
@@ -31,18 +32,17 @@
 	<div class="collapse navbar-collapse navHeaderCollapse">
 		<ul class="nav navbar-nav navbar-right text-center" id="navbar_inner">
 			<li><a href="index.html">Home</a></li>
-			<li><a href="index.html#about_header">About</a></li>
 			<li><a href="menu.html">Menu</a></li>
-			<li><a class="r" href="order.php">Place an Order</a></li>
-			<li><a href="index.html#contact_container">Contact</a></li>
+			<li><a href="order.php">Place an Order</a></li>
+			<li><a href="index.html#about_header">About</a></li>
+			<li><a href="index.html#contact_header">Contact</a></li>
 			<li><a href="catering_form.html">Catering Quote</a></li>
-			
 		</ul>
 	</div> 
 </nav>
 <section>
 	<div id="cart">
-		<br><br><br><br>
+		<br><br><br><br><br><br>
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12 center_text w heading">Cart</div>
 			<hr class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3 hr_w">
@@ -88,8 +88,6 @@
 						<br>
 					</div>
 				</div>
-				<div class="visible-sm"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
-				<div class="visible-xs"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					<div class="col-lg-11 col-lg-offset-0 col-xl-11 col-xl-offset-0 col-md-11 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0 bg_2">
 						<div class="row">
@@ -101,18 +99,26 @@
 							<br>
 							<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
 								<div class="center_text w">
-									<form role="form">
+									<form role="form" action="php/captcha.php" method="POST">
 										<div class="form-group">
 											<label for="consumerName">Name</label>
-											<input type="text" class="center_text form-control" id="consumerName" placeholder="Name of Customer">
+											<input type="text" name="name" class="center_text form-control" id="consumerName" placeholder="Name of Customer" <?php if(isset($_GET['name'])){ $name=$_GET['name']; echo "value=\"$name\""; } ?>>
 										</div>
 										<div class="form-group">
 											<label for="consumerNo">Cellphone</label>
-											<input type="text" class="center_text form-control" id="consumerNo" placeholder="###-####">
+											<input type="text" name="num" class="center_text form-control" id="consumerNo" placeholder="###-####" <?php if(isset($_GET['num'])){ $num=$_GET['num']; echo "value=\"$num\""; } ?>>
 										</div>
 									</form>
 								</div>
 							</div>
+						</div>
+						<div class="row">
+							<?php
+								$toPrint = '<div class="form-group"><center><div class="g-recaptcha" data-sitekey="6Lf4oxYTAAAAAA1Hjyh58OVeecGN0FSfHe7rjSkg"></div></center></div><div class="form-group col-sm-12"><center><input type="submit" value="VERIFY" class="button col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3"></center></div>';
+								if($_GET['verified'] !== 'true'){
+									echo $toPrint;
+								}
+							 ?>
 						</div>
 						<div class="row">
 							<div class="col-lg-12 text-center w">

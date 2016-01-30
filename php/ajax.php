@@ -16,15 +16,6 @@
 		case "clearSession":
 			clearSession();
 			break;
-		case "updateOrderStatus":
-			updateOrderStatus($_POST["status"]);
-			break;
-		case "updateBackendUI":
-			updateBackendUI($_POST["status"]);
-			break;
-		case "reachedTablet":
-			reachedTablet();
-			break;
 		case "checkOverdue":
 			checkOverdue();
 			break;
@@ -69,6 +60,9 @@
 		}
 		if(isset($_SESSION['Packer'])){
 			unset($_SESSION["Packer"]);
+		}
+		if(isset($_SESSION['captcha'])){
+			unset($_SESSION["captcha"]);
 		}
 	}
 
@@ -160,10 +154,15 @@
 
 	function sendOrder(){
 		updateOrderJSON();
+		
 		$order = json_decode($_SESSION['OrderJSON']);
 		$time = $_POST['timePlaced'];
 		$ip = $_SERVER['REMOTE_ADDR'];
 		
+		if(!isset($_SESSION['captcha'])){
+			echo 'not verified';
+			return;
+		}
 		if($order->items == array()){
 			echo 'empty';
 			clearSession();
@@ -171,7 +170,6 @@
 		}
 		if($order->pickup < time()){
 			echo 'early';
-			clearSession();
 			return;
 		}
 		
@@ -212,88 +210,6 @@
 		    exit;
 		}
 		$_SESSION["OrderPlaced"] = 1;
-	}
-
-	function updateOrderStatus($status){
-		$id = $_POST["id"];
-		$Query = "UPDATE orders SET status=\"$status\" WHERE orderID=$id";
-		if(!($result = $GLOBALS['db']->query($Query))){
-			// echo "Error: Query failed to execute: \n";
-		 //   echo "Query: ". $Query."\n";
-		 //   echo "Errno: ". $GLOBALS['db']->errno."\n";
-		 //   echo "Error: ". $GLOBALS['db']->error."\n";
-		    exit;
-		}
-	}
-
-	function reachedTablet(){
-		$id = $_POST["id"];
-		$Query = "UPDATE orders SET reachedTablet=1 WHERE orderID=$id";
-		if(!($result = $GLOBALS['db']->query($Query))){
-			// echo "Error: Query failed to execute: \n";
-		 //   echo "Query: ". $Query."\n";
-		 //   echo "Errno: ". $GLOBALS['db']->errno."\n";
-		 //   echo "Error: ". $GLOBALS['db']->error."\n";
-		    exit;
-		}
-	}
-
-	function updateBackendUI($status){
-		$orders = array();
-		$Query = "SELECT * FROM orders WHERE status=\"$status\" ORDER BY pickup ASC";
-		if(!($result = $GLOBALS['db']->query($Query))){
-			// echo "Error: Query failed to execute: \n";
-		 //   echo "Query: ". $Query."\n";
-		 //   echo "Errno: ". $GLOBALS['db']->errno."\n";
-		 //   echo "Error: ". $GLOBALS['db']->error."\n";
-		    exit;
-		}
-
-		while($order = $result->fetch_assoc()){
-			$obj = new stdObject();
-			$obj->id = $order['orderID'];
-			$obj->consumerName = $order['consumerName'];
-			$obj->phoneNumber = $order['phoneNumber'];
-			$obj->pickup = $order['pickup'];
-			$obj->status = $order['status'];
-			$obj->items = array();
-			foreach(explode("|", $order['sides']) as $strSide){
-				$itemObj = new stdObject();
-				$numbers = explode("-", $strSide);
-				$id = $numbers[0];
-				if(count($numbers) > 1){
-					if($numbers[1] > 0){
-						$nameResult = $GLOBALS['db']->query("SELECT name FROM combos WHERE comboID = \"$id\"");
-						$priceResult = $GLOBALS['db']->query("SELECT price FROM combos WHERE comboID = \"$id\"");
-						if(isset($nameResult)){
-							$itemObj->name = $nameResult->fetch_assoc()['name'];
-							$itemObj->price = $priceResult->fetch_assoc()['price'];
-							$itemObj->quantity = intval($numbers[1]);
-							array_push($obj->items, $itemObj);
-						}
-					}
-				}
-			}
-			foreach(explode("|", $order['combos']) as $strCombo){
-				$itemObj = new stdObject();
-				$numbers = explode("-", $strCombo);
-				$id = $numbers[0];
-				if(count($numbers) > 1){
-					if($numbers[1] > 0){
-						$nameResult = $GLOBALS['db']->query("SELECT name FROM sides WHERE sideID = \"$id\"");
-						$priceResult = $GLOBALS['db']->query("SELECT price FROM sides WHERE sideID = \"$id\"");
-						if(isset($nameResult)){
-							$itemObj->name = $nameResult->fetch_assoc()['name'];
-							$itemObj->price = $priceResult->fetch_assoc()['price'];
-							$itemObj->quantity = intval($numbers[1]);
-							array_push($obj->items, $itemObj);
-						}
-					}
-				}
-			}
-			array_push($orders, $obj);
-		}
-		echo json_encode($orders);
 	}
 
 	function checkReached(){

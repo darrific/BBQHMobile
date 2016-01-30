@@ -1,7 +1,6 @@
 redirect();
 
 function redirect(){
-
 	if(window.navigator.userAgent.match(/Tablet PC/i)){
 		return;
 	} else {
@@ -18,19 +17,10 @@ function redirect(){
 	|| window.navigator.userAgent.match(/webOS/i))
 	{
 		/*alert('True - Mobile - ' + navigator.userAgent);*/
-		currentlocation = window.location.pathname;
-		if (currentlocation === ("/order.php")){
-			currentlocation = "/blockoff.html";
-		}
+		var currentlocation = window.location.pathname;
 		window.location.href="http://m.originalbbqhut.com" + currentlocation;
 	} else {
 		/*alert('False - Mobile - ' + navigator.userAgent);*/
-			currentlocation = window.location.pathname;
-			if(currentlocation === "/order.php"){
-				currentlocation = "/blockoff.html";
-				window.location.href="http://test.originalbbqhut.com" + currentlocation;			
-			}
-			
 	}
 
 	if(window.navigator.userAgent.match(/Tablet/i)
@@ -41,15 +31,8 @@ function redirect(){
 	{
 		/*alert('True - Tablet - ' + navigator.userAgent);*/
 		currentlocation = window.location.pathname;
-		if (currentlocation === ("/order.php")){
-			currentlocation = "/blockoff.html";}
 		window.location.href="http://m.originalbbqhut.com" + currentlocation;
 	} else {
 		/*alert('False - Tablet - ' + navigator.userAgent);*/
-			currentlocation = window.location.pathname;
-			if(currentlocation === "/order.php"){
-				currentlocation = "/blockoff.html";
-				window.location.href="http://test.originalbbqhut.com" + currentlocation;			
-			}
 	}
 }

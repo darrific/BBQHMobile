@@ -9,6 +9,11 @@ var cartTemplate = '{{#items}}<div id="orderitem" class="col-lg-12 col-md-12 col
 var $bigOrderContainer = $('#bigOrderContainer');
 var $UIContainer = $('#UIContainer');
 
+var scrollPos = $(window).scrollTop();
+$window = $(window);
+var screenwidth = $(window).width();
+var orderboxscroll = $('#bannerorderpage').offset().top;
+
 getData();
 
 function getData(){
@@ -125,24 +130,34 @@ function render(){
 	$('#carttotal').html(calculateTotal());
 	registerButtons();
 	animate();
+	updateScroll();
 }
 
 function animate(){
-	if(order.items.length > 0){
+	if((order.items.length > 0)&&($window.scrollTop() >= orderboxscroll)){
 		showCart();
 		return;
-	}
+	}else{
+	if((order.items.length <= 0)||($window.scrollTop() < orderboxscroll)){
 	hideCart();
+	return;
+	}}
 }
-
+	
 function showCart(){
-	$UIContainer.velocity({translateX:60}, {duration:1000});
-	$bigOrderContainer.velocity({opacity:1}, {duration:1000, delay:410});
+	if (screenwidth >= 1440){
+	$UIContainer.velocity({translateX:-225}, {duration:1000});
+	}else{
+	if (screenwidth < 1440 ){
+		$UIContainer.velocity({translateX:500}, {duration:1000});
+		$('#orderscontainer').css('max-height','250px');
+	}}
+	$bigOrderContainer.fadeIn(500);
 }
 
 function hideCart(){
-	$UIContainer.velocity({translateX:310, delay:500}, {duration:1000, delay:250});
-	$bigOrderContainer.velocity({opacity:0},{duration:500});
+	$UIContainer.velocity({translateX:0}, {duration:1000});
+	$bigOrderContainer.fadeOut(500);
 }
 
 
@@ -172,7 +187,13 @@ $('#ResetButton').on("click", function(){
 	  $("#resetpopup").fadeIn(200).delay(2000).fadeOut(200);
 });
 
+function updateScroll(){
+    var element = document.getElementById("orderscontainer");
+    element.scrollTop = element.scrollHeight;
+}
+
 $(window).scroll(function(){
+	animate();
 	var scrollPos = $(window).scrollTop();
 	$("#resetpopup").css('margin-top',scrollPos);
 });

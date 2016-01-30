@@ -18,36 +18,26 @@
 </head>
 
 <body>
-<div id="navigationbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header"><a class="navbar-brand" href="index.html">Original Bar-B-Que Hut</a>
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder">
-            	<span class="sr-only">Toggle navigation</span>
-            	<span class="icon-bar"></span>
-            	<span class="icon-bar"></span>
-            	<span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse navbar-menubuilder">
-            <ul class="nav navbar-nav navbar-center col-lg-10 col-xl-10">
-                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a href="index.html">Home</a>
-                </li>
-                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a href="menu.html">See Our Menu</a>
-				</li>
-                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a href="order.php">Place An Order</a>
-                </li>
-                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a id="navabout" href="index.html#aboutus">About Us</a>
-                </li>
-                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a id="navcontact" href="index.html#contactus">Contact Us</a>
-                </li>
-                <li class="col-lg-2 col-lg-offset-0 col-xl-2 col-xl-offset-0"><a href="cart.php">Cart</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<br><br><br><br>
+<nav class="navbars navbar navbar-inverse navbar-fixed-top" id="navbar_color">
+	<br>
+	<a href="index.html" id="nav_brand" class="navbar-brand padding_30">Original Bar-B-Que Hut</a>
+	<button id="navbar_menu_button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	</button>
+	<div class="collapse navbar-collapse navHeaderCollapse">
+		<ul class="nav navbar-nav navbar-right text-center" id="navbar_inner">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="menu.html">Menu</a></li>
+			<li><a href="order.php">Place an Order</a></li>
+			<li><a href="index.html#about_header">About</a></li>
+			<li><a href="index.html#contact_header">Contact</a></li>
+			<li><a href="catering_form.html">Catering Quote</a></li>
+		</ul>
+	</div> 
+</nav>
+<br><br><br><br><br>
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 hidden-xs center_text w heading0">Order Failed</div>
 	<div class="col-xs-12 visible-xs center_text w heading2">Order Failed</div>
@@ -83,9 +73,6 @@
 			</div>
 		</div>
 	</div>
-</div>
-<div class="visble-lg"><br><br><br><br><br><br><br><br></div>
-<div class="row" id="footer">
 </div>	
 </body>
 

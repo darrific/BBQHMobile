@@ -76,8 +76,14 @@ $('#placeOrderButton').on("click", function(){
 		order.phoneNumber = number;
 		// alert(JSON.stringify(order));
 		$.post('php/ajax.php', {'OrderJSON': JSON.stringify(order), 'action': 'sendOrder', 'timePlaced':moment().unix()}, function(data, textStatus, xhr) {
+			if(data == "not verified"){
+				alert("You did not complete the captcha successfully!");
+				window.location.href = "cart.php";
+				return;
+			}
 			if(data == "empty"){
 				alert('You do not have an order placed!');
+				window.location.href = "order.php";
 				return;
 			}
 			if(data == "spam"){
@@ -87,7 +93,6 @@ $('#placeOrderButton').on("click", function(){
 			}
 			if(data == "early"){
 				alert('You cannot set an order to be picked up before the current time!');
-				window.location.href = "failure.html";
 				return;
 			}
 			window.location.href = "loading.html";

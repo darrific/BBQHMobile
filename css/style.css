@@ -22,7 +22,7 @@
 
 .orderbanner {
   background: url(../images/small/orderbanner.jpg);
-  background-size: 100%;
+  background-size: 100% 100%;
   height: 500px; }
 
 .bannertext {
@@ -38,7 +38,7 @@
   color: #000; }
 
 #orderscontainer {
-  max-height: 500px;
+  max-height: 325px;
   overflow-x: none;
   overflow-y: auto; }
 
@@ -60,6 +60,13 @@
   font-family: opensansregular;
   font-size: 13px; }
 
+#bigOrderContainer {
+  display: none;
+  position: fixed;
+  top: 16%;
+  left: 72%;
+  z-index: 20; }
+
 ::-webkit-scrollbar {
   width: 12px;
   border-radius: 10px; }
@@ -75,11 +82,11 @@
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); }
 
 #cart {
-  background: url(../images/small/untitled-401.jpg);
+  background: url(../images/small/untitled-444.jpg);
   background-size: 100% 100%; }
 
 #allorderscontainer {
-  max-height: 406px;
+  max-height: 558px;
   overflow-x: none;
   overflow-y: auto; }
 
@@ -362,13 +369,15 @@ body {
   font-family: bebasbold;
   font-size: 50px;
   width: 500px;
-  height: 60px; }
+  height: 60px;
+  overflow: none; }
 
 #navbar_color {
- }
+  background-color: #090909;
+  height: 100px; }
 
 #index {
-  background: url("../images/small/pit.jpg");
+  background: url("../images/index4.jpg");
   background-size: 100% 100%; }
 
 #slogan {
@@ -483,26 +492,5 @@ body {
 
 #rootimg {
   width: 100px; }
-
-@-webkit-keyframes blinking_button {
-   50% { opacity: 0.3; }
-}
-
-@-moz-keyframes blinking_button {
-   50% { opacity: 0.3; }
-}
-@-o-keyframes blinking_button {
-   50% { opacity: 0.3; }
-}
-@keyframes blinking_button {
-  50% { opacity: 0.3; }
-}
-  
-#button_tutorial {
-  -webkit-animation: blinking_button 2s  infinite; 
-  -moz-animation:    blinking_button 2s  infinite; 
-  -o-animation:      blinking_button 2s  infinite; 
-  animation:         blinking_button 2s  infinite;
-}
 
 /*# sourceMappingURL=style.css.map */
